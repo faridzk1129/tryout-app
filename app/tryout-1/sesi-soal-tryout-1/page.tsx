@@ -7,7 +7,7 @@ import {
   ChevronRight,
   Flag,
   Send,
-  LayoutDashboard,
+  FileText,
   AlertCircle,
   Menu, // Icon Hamburger
   X, // Icon Close
@@ -133,7 +133,7 @@ export default function SesiSoalTryout1() {
         {/* SISI KIRI: JUDUL */}
         <div className="flex items-center gap-2 md:gap-3">
           <div className="hidden md:block bg-indigo-600 p-2 rounded-lg text-white">
-            <LayoutDashboard size={20} />
+            <FileText size={20} />
           </div>
           <div>
             <h1 className="text-xs md:text-base font-bold text-slate-800">Tryout SKD #1</h1>
@@ -177,10 +177,6 @@ export default function SesiSoalTryout1() {
                 <span className="bg-slate-100 text-slate-600 px-3 py-1 rounded-full text-[10px] md:text-xs font-bold">
                   Soal No. {currentIdx + 1}
                 </span>
-                <div className="flex items-center gap-2 text-amber-500 bg-amber-50 px-3 py-1 rounded-lg text-[10px] md:text-xs font-bold border border-amber-200">
-                  <AlertCircle size={14} /> SKOR:{" "}
-                  {questionsData[currentIdx].category === "TKP" ? "1-5" : "5/0"}
-                </div>
               </div>
 
               <p className="text-slate-800 text-base md:text-lg leading-relaxed font-medium mb-8">
@@ -220,9 +216,9 @@ export default function SesiSoalTryout1() {
                 )}
                 <button
                   onClick={toggleRagu}
-                  className={`flex-1 md:flex-none flex items-center justify-center gap-2 px-4 py-3 rounded-xl font-bold text-sm border-2 ${answers[currentIdx + 1]?.isRagu ? "bg-amber-500 border-amber-600 text-white" : "bg-white border-amber-500 text-amber-500"}`}
+                  className={`flex-1 md:flex-none flex items-center justify-center gap-2 px-4 py-3 rounded-xl font-bold text-sm border-2 ${answers[currentIdx + 1]?.isRagu ? "bg-amber-500 border-amber-500 text-white" : "bg-white border-amber-500 text-amber-500"}`}
                 >
-                  <Flag size={18} fill={answers[currentIdx + 1]?.isRagu ? "white" : "none"} /> Ragu
+                  <Flag size={18} fill={answers[currentIdx + 1]?.isRagu ? "white" : "none"} /> Ragu-ragu
                 </button>
               </div>
 
@@ -263,9 +259,7 @@ export default function SesiSoalTryout1() {
           `}
         >
           <div className="p-6 border-b border-slate-100 flex justify-between items-center">
-            <h2 className="font-black text-slate-800 flex items-center gap-2">
-              <LayoutDashboard size={18} className="text-indigo-600" /> Navigasi Soal
-            </h2>
+            <h2 className="font-black text-slate-800 flex items-center gap-2">Navigasi Soal</h2>
             <button
               onClick={() => setIsSidebarOpen(false)}
               className="lg:hidden p-2 hover:bg-slate-100 rounded-full"
