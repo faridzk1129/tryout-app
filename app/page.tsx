@@ -17,7 +17,7 @@ import { useRouter } from "next/navigation";
 export default function Home() {
   const router = useRouter();
 
-  // --- States ---
+
   const [formData, setFormData] = useState({ username: "", password: "" });
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
@@ -156,8 +156,8 @@ export default function Home() {
         <div className="p-8 lg:p-10 lg:py-14 flex flex-col bg-white ">
           <div className="w-full flex flex-col justify-center items-center">
             <div className="mb-8 text-center lg:text-left flex flex-col gap-2 self-start w-full ">
-              <h2 className="text-3xl font-bold text-slate-800 hidden lg:block ">Portal Masuk</h2>
-              <p className="text-slate-700 font-semibold text-sm lg:text-base">
+              <h2 className="text-3xl font-bold text-indigo-700 hidden lg:block ">Portal Masuk</h2>
+              <p className="text-indigo-600 font-semibold text-sm lg:text-base">
                 Silahkan login dengan akun terdaftar
               </p>
             </div>
