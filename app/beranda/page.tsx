@@ -17,14 +17,13 @@ export default function Beranda() {
 
   // Data dummy untuk 5 card tryout
   const tryoutList = [
-    { id: 1, title: "Tryout 1", slug: "page-info-tryout-1", status: "Tersedia" },
-    { id: 2, title: "Tryout 2", slug: "page-info-tryout-2", status: "Segera" },
-    { id: 3, title: "Tryout 3", slug: "page-info-tryout-3", status: "Segera" },
-    { id: 4, title: "Tryout 4", slug: "page-info-tryout-4", status: "Segera" },
-    { id: 5, title: "Tryout 5", slug: "page-info-tryout-5", status: "Segera" },
-    { id: 6, title: "Tryout 6", slug: "page-info-tryout-6", status: "Segera" },
-    { id: 7, title: "Tryout 7", slug: "page-info-tryout-7", status: "Segera" },
-
+    { id: 1, title: "Tryout 1", slug: "tryout-1", status: "Tersedia" },
+    { id: 2, title: "Tryout 2", slug: "tryout-2", status: "Segera" },
+    { id: 3, title: "Tryout 3", slug: "tryout-3", status: "Segera" },
+    { id: 4, title: "Tryout 4", slug: "tryout-4", status: "Segera" },
+    { id: 5, title: "Tryout 5", slug: "tryout-5", status: "Segera" },
+    { id: 6, title: "Tryout 6", slug: "tryout-6", status: "Segera" },
+    { id: 7, title: "Tryout 7", slug: "tryout-7", status: "Segera" },
   ];
 
   const handleLogout = () => {

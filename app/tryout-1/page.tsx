@@ -71,7 +71,7 @@ const PassingGradeChart = ({
   );
 };
 
-export default function PageInfoTryout1() {
+export default function Tryout1() {
   const router = useRouter();
 
   // Status dummy: ubah ke 'true' jika ingin melihat tombol "Lihat Pembahasan"
@@ -184,7 +184,7 @@ export default function PageInfoTryout1() {
               )}
 
               <button
-                onClick={() => router.push("/halaman-soal")}
+                onClick={() => router.push("/tryout-1/sesi-soal-tryout-1")}
                 className="flex-[2] flex items-center justify-center gap-3 bg-gradient-to-r from-indigo-600 to-blue-700 hover:from-indigo-700 hover:to-blue-800 text-white font-black py-5 px-8 rounded-2xl transition-all duration-300 shadow-xl shadow-indigo-200 hover:shadow-2xl hover:shadow-indigo-300 hover:-translate-y-1"
               >
                 Mulai Tryout Sekarang
