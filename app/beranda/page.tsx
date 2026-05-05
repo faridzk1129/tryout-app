@@ -1,5 +1,6 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
+
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import {
@@ -15,6 +16,21 @@ import {
 export default function Beranda() {
   const router = useRouter();
 
+  // {/* TAMBAHKAN: State untuk simpan data user */}
+  const [userData, setUserData] = useState<{ username: string; to_access_limit: number } | null>(
+    null,
+  );
+
+  useEffect(() => {
+    // Ambil data session
+    const session = localStorage.getItem("user_session");
+    if (!session) {
+      router.push("/"); // Proteksi halaman: Balik ke login jika tidak ada session
+    } else {
+      setUserData(JSON.parse(session));
+    }
+  }, [router]);
+
   // Data dummy untuk 5 card tryout
   const tryoutList = [
     { id: 1, title: "Tryout 1", slug: "tryout-1", status: "Tersedia" },
@@ -27,6 +43,7 @@ export default function Beranda() {
   ];
 
   const handleLogout = () => {
+    localStorage.removeItem("user_session"); // {/* TAMBAHKAN: Hapus session saat logout */}
     router.push("/");
   };
 
@@ -80,15 +97,17 @@ export default function Beranda() {
             </div>
             Daftar Tryout Tersedia
           </h2>
-          <span className="text-sm font-medium text-slate-500 bg-slate-200 px-3 py-1 rounded-full">
-            {tryoutList.length} Paket
+          {/* {/* PERUBAHAN: Badge info akses */}
+          <span className="text-sm font-medium text-indigo-700 bg-indigo-50 px-4 py-1.5 rounded-full border border-indigo-100">
+            Akses: {userData?.to_access_limit} Paket TO
           </span>
         </div>
 
         {/* --- TRYOUT LIST --- */}
         <div className="flex flex-wrap gap-6 justify-center md:justify-start">
           {tryoutList.map((item) => {
-            const isAvailable = item.status === "Tersedia";
+            // {/* PERUBAHAN: Logic Akses Berdasarkan Database */}
+            const isAvailable = userData ? item.id <= userData.to_access_limit : false;
 
             return (
               <div
@@ -101,64 +120,47 @@ export default function Beranda() {
                   href={isAvailable ? `/${item.slug}` : "#"}
                   onClick={(e) => !isAvailable && e.preventDefault()}
                   className={`group relative block h-full transition-all duration-300 ${
-                    isAvailable
-                      ? "hover:-translate-y-2"
-                      : "pointer-events-none opacity-70 grayscale"
+                    isAvailable ? "hover:-translate-y-2" : "opacity-70"
                   }`}
                 >
                   <div
-                    className={`bg-white border rounded-[2rem] p-6 h-full flex flex-col justify-between overflow-hidden relative ${
+                    className={`bg-white border rounded-[2rem] p-6 h-full flex flex-col justify-between overflow-hidden relative transition-all ${
                       isAvailable
                         ? "border-slate-200 shadow-sm hover:shadow-xl hover:border-indigo-300"
-                        : "border-slate-300 shadow-none"
+                        : "border-slate-200 bg-slate-50/50 grayscale"
                     }`}
                   >
-                    {/* Background Decor */}
-                    <div
-                      className={`absolute top-0 right-0 -mr-8 -mt-8 w-24 h-24 rounded-full transition-colors ${
-                        isAvailable ? "bg-indigo-50 group-hover:bg-indigo-100" : "bg-slate-200"
-                      }`}
-                    ></div>
+                    {/* Status Badge */}
+                    <div className="relative z-10 flex justify-between items-start mb-4">
+                      <div
+                        className={`p-3 rounded-2xl ${isAvailable ? "bg-indigo-100 text-indigo-700" : "bg-slate-200 text-slate-400"}`}
+                      >
+                        <FileText size={24} />
+                      </div>
+                      <span
+                        className={`text-[10px] font-bold px-2 py-1 rounded-md uppercase flex items-center gap-1 ${
+                          isAvailable
+                            ? "bg-green-100 text-green-600"
+                            : "bg-slate-200 text-slate-500"
+                        }`}
+                      >
+                        {isAvailable ? <CheckCircle2 size={10} /> : <Lock size={10} />}
+                        {isAvailable ? "Terbuka" : "Terkunci"}
+                      </span>
+                    </div>
 
                     <div className="relative z-10">
-                      <div className="flex justify-between items-start mb-4">
-                        <div
-                          className={`p-3 rounded-2xl transition-colors duration-300 ${
-                            isAvailable
-                              ? "bg-indigo-100 text-indigo-700 group-hover:bg-indigo-600 group-hover:text-white"
-                              : "bg-slate-200 text-slate-500"
-                          }`}
-                        >
-                          <FileText size={24} />
-                        </div>
-                        <span
-                          className={`text-[10px] font-bold px-2 py-1 rounded-md uppercase flex items-center gap-1 ${
-                            isAvailable
-                              ? "bg-green-100 text-green-600"
-                              : "bg-slate-300 text-slate-500"
-                          }`}
-                        >
-                          {!isAvailable && <Lock size={10} />}
-                          {item.status}
-                        </span>
-                      </div>
-
                       <h3
-                        className={`text-xl font-bold mb-2 transition-colors ${
-                          isAvailable
-                            ? "text-slate-800 group-hover:text-indigo-600"
-                            : "text-slate-400"
-                        }`}
+                        className={`text-xl font-bold mb-2 ${isAvailable ? "text-slate-800" : "text-slate-400"}`}
                       >
                         {item.title}
                       </h3>
-
                       <div className="space-y-2 mb-6 mt-4">
                         <div className="flex items-center gap-2 text-sm text-slate-500">
                           <Clock size={14} /> 100 Menit
                         </div>
                         <div className="flex items-center gap-2 text-sm text-slate-500">
-                          <CheckCircle2 size={14} /> 110 Soal Standard
+                          <CheckCircle2 size={14} /> 110 Soal 
                         </div>
                       </div>
                     </div>
@@ -168,11 +170,11 @@ export default function Beranda() {
                         disabled={!isAvailable}
                         className={`w-full font-bold py-3 px-4 rounded-xl flex items-center justify-center gap-2 border transition-all duration-300 ${
                           isAvailable
-                            ? "bg-slate-100 text-slate-600 group-hover:bg-gradient-to-r group-hover:from-indigo-600 group-hover:to-blue-700 group-hover:text-white border-transparent group-hover:shadow-lg group-hover:shadow-indigo-200"
-                            : "bg-slate-300 text-slate-600 border-slate-200 cursor-not-allowed"
+                            ? "bg-slate-100 text-slate-600 group-hover:bg-gradient-to-r group-hover:from-indigo-600 group-hover:to-blue-700 group-hover:text-white border-transparent"
+                            : "bg-slate-200 text-slate-400 border-slate-200 cursor-not-allowed"
                         }`}
                       >
-                        {isAvailable ? "Mulai Sekarang" : "Belum Tersedia"}
+                        {isAvailable ? "Mulai Sekarang" : "Beli Akses"}
                         {isAvailable && (
                           <ChevronRight
                             size={18}

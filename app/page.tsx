@@ -17,7 +17,6 @@ import { useRouter } from "next/navigation";
 export default function Home() {
   const router = useRouter();
 
-
   const [formData, setFormData] = useState({ username: "", password: "" });
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
@@ -56,7 +55,6 @@ export default function Home() {
     setFormData((prev) => ({ ...prev, [name]: value }));
     if (error) setError("");
   };
-
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
@@ -69,21 +67,17 @@ export default function Home() {
         body: JSON.stringify(formData),
       });
 
-      const contentType = response.headers.get("content-type");
-      if (!contentType || !contentType.includes("application/json")) {
-        throw new Error("Server tidak mengirimkan JSON. Periksa kembali API Anda.");
-      }
-
       const data = await response.json();
 
       if (response.ok) {
+        // {/* TAMBAHKAN: Simpan data user ke localStorage */}
+        localStorage.setItem("user_session", JSON.stringify(data.user));
         router.push("/beranda");
       } else {
         setError(data.message || "Gagal masuk ke sistem.");
       }
     } catch (err: any) {
-      console.error("DEBUG ERROR:", err);
-      setError(err.message || "Koneksi gagal. Periksa jaringan anda.");
+      setError("Koneksi gagal. Periksa jaringan anda.");
     } finally {
       setIsLoading(false);
     }

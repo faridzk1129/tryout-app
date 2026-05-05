@@ -6,28 +6,29 @@ export async function POST(request: Request) {
     const body = await request.json();
     const { username, password } = body;
 
-    // 1. Validasi Input Kosong
     if (!username || !password) {
       return NextResponse.json({ message: "Username dan password wajib diisi" }, { status: 400 });
     }
 
-    // 2. Query ke Supabase
     const { data: user, error } = await supabase
       .from("users")
-      .select("*")
+      .select("id, username, password, to_access_limit") // {/* PERUBAHAN: Ambil to_access_limit */}
       .eq("username", username)
       .single();
 
-    // 3. Validasi Keberadaan User & Password
     if (error || !user || user.password !== password) {
       return NextResponse.json({ message: "Username atau password salah" }, { status: 401 });
     }
 
-    // 4. Berhasil Login
     return NextResponse.json(
       {
         message: "Login berhasil",
-        user: { id: user.id, username: user.username },
+        // {/* PERUBAHAN: Kirim data user lengkap ke frontend */}
+        user: {
+          id: user.id,
+          username: user.username,
+          to_access_limit: user.to_access_limit,
+        },
       },
       { status: 200 },
     );
