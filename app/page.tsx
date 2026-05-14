@@ -55,6 +55,7 @@ export default function Home() {
     setFormData((prev) => ({ ...prev, [name]: value }));
     if (error) setError("");
   };
+
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
@@ -82,6 +83,7 @@ export default function Home() {
       setIsLoading(false);
     }
   };
+  
   return (
     <main className="min-h-screen w-full bg-slate-50 flex items-center justify-center p-6 relative overflow-x-hidden">
       {/* Floating Notification (Toast) */}

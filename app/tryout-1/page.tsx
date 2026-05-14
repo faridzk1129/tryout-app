@@ -13,7 +13,6 @@ import {
   AlertCircle,
 } from "lucide-react";
 
-// Komponen Circle Chart Kustom
 const PassingGradeChart = ({
   label,
   pg,
