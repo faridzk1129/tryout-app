@@ -4,15 +4,19 @@ export type Category = "TWK" | "TIU" | "TKP";
 export interface Option {
   label: string;
   text: string;
-  image?: string; // Menampung gambar jika ada
-  points: number; // Bobot nilai (5/0 untuk TIU/TWK, 1-5 untuk TKP)
+  image?: string;
+  points: number;
+}
+
+export interface QuestionContent {
+  type: "text" | "image";
+  value: string;
 }
 
 export interface Question {
   id: number;
   category: Category;
-  questionText: string;
-  questionImage?: string; // Gambar di soal jika ada
+  content: QuestionContent[]; // Menggantikan questionText dan questionImage
   options: Option[];
 }
 
@@ -20,8 +24,13 @@ export const questions: Question[] = [
   {
     id: 1,
     category: "TWK",
-    questionText:
-      "Berikut ini yang bukan termasuk perilaku nasionalisme yang tercermin pada kehidupan bernegara adalah….",
+    content: [
+      {
+        type: "text",
+        value:
+          "Berikut ini yang bukan termasuk perilaku nasionalisme yang tercermin pada kehidupan bernegara adalah….",
+      },
+    ],
     options: [
       { label: "A", text: "Menghormati keputusan hakim", points: 0 },
       { label: "B", text: "Ikut serta dalam pasukan perdamaian dunia", points: 0 },
@@ -37,8 +46,13 @@ export const questions: Question[] = [
   {
     id: 2,
     category: "TWK",
-    questionText:
-      "Pengakuan terhadap keberagaman agama merupakan wujud semangat nasionalisme dalam mempersatukan keberagaman nasional. Landasan dari pengakuan tersebut adalah….",
+    content: [
+      {
+        type: "text",
+        value:
+          "Pengakuan terhadap keberagaman agama merupakan wujud semangat nasionalisme dalam mempersatukan keberagaman nasional. Landasan dari pengakuan tersebut adalah….",
+      },
+    ],
     options: [
       {
         label: "A",
@@ -62,8 +76,13 @@ export const questions: Question[] = [
   {
     id: 3,
     category: "TWK",
-    questionText:
-      "Masyarakat Indonesia merupakan masyarakat yang majemuk. Diperlukan adanya sikap nasionalisme berdasarkan keanekaragaman tersebut. Hal ini bertujuan agar….",
+    content: [
+      {
+        type: "text",
+        value:
+          "Masyarakat Indonesia merupakan masyarakat yang majemuk. Diperlukan adanya sikap nasionalisme berdasarkan keanekaragaman tersebut. Hal ini bertujuan agar….",
+      },
+    ],
     options: [
       {
         label: "A",
@@ -79,8 +98,13 @@ export const questions: Question[] = [
   {
     id: 4,
     category: "TWK",
-    questionText:
-      "Lunturnya nasionalisme salah satunya disebabkan permasalahan kompleks yang dialami oleh bangsa Indonesia. Permasalahan kompleks yang dihadapi Indonesia adalah…",
+    content: [
+      {
+        type: "text",
+        value:
+          "Lunturnya nasionalisme salah satunya disebabkan permasalahan kompleks yang dialami oleh bangsa Indonesia. Permasalahan kompleks yang dihadapi Indonesia adalah…",
+      },
+    ],
     options: [
       {
         label: "A",
@@ -96,8 +120,12 @@ export const questions: Question[] = [
   {
     id: 5,
     category: "TWK",
-    questionText:
-      "Peristiwa nasionalisme yang dilakukan pada saat sumpah pemuda tahun 1928 adalah….",
+    content: [
+      {
+        type: "text",
+        value: "Peristiwa nasionalisme yang dilakukan pada saat sumpah pemuda tahun 1928 adalah….",
+      },
+    ],
     options: [
       {
         label: "A",
@@ -121,8 +149,13 @@ export const questions: Question[] = [
   {
     id: 6,
     category: "TWK",
-    questionText:
-      "Sarekat Islam (dahulu SDI) pecah menjadi dua kubu pada tahun 1921. Berikut ini yang termasuk kedalam kubu si Merah adalah….",
+    content: [
+      {
+        type: "text",
+        value:
+          "Sarekat Islam (dahulu SDI) pecah menjadi dua kubu pada tahun 1921. Berikut ini yang termasuk kedalam kubu si Merah adalah…",
+      },
+    ],
     options: [
       { label: "A", text: "Abdul Muis", points: 0 },
       { label: "B", text: "Haji Agus Salim", points: 0 },
@@ -134,8 +167,13 @@ export const questions: Question[] = [
   {
     id: 7,
     category: "TWK",
-    questionText:
-      "Berdasarkan wacana tentang K.H. Idham Chalid dan Buya Hamka, nilai integritas yang selayaknya dicontoh dari sikap Idham Chalid adalah….",
+    content: [
+      {
+        type: "text",
+        value:
+          "Berdasarkan wacana tentang K.H. Idham Chalid dan Buya Hamka, nilai integritas yang selayaknya dicontoh dari sikap Idham Chalid adalah….",
+      },
+    ],
     options: [
       {
         label: "A",
@@ -159,7 +197,12 @@ export const questions: Question[] = [
   {
     id: 8,
     category: "TWK",
-    questionText: "Sikap integritas sesuai dengan pengamalan Pancasila sila ke-2 adalah….",
+    content: [
+      {
+        type: "text",
+        value: "Sikap integritas sesuai dengan pengamalan Pancasila sila ke-2 adalah….",
+      },
+    ],
     options: [
       { label: "A", text: "Zakky selalu menjadi pencoblos pertama setiap kali pemilu", points: 0 },
       { label: "B", text: "Aniek membagikan pengamalan positifnya usai divaksin", points: 0 },
@@ -175,8 +218,13 @@ export const questions: Question[] = [
   {
     id: 9,
     category: "TWK",
-    questionText:
-      "Tindakan Kasman Dimejo membujuk teman-temannya untuk menghilangkan tujuh kata pada sila ke-1 Pancasila demi persatuan mencerminkan sikap….",
+    content: [
+      {
+        type: "text",
+        value:
+          "Tindakan Kasman Dimejo membujuk teman-temannya untuk menghilangkan tujuh kata pada sila ke-1 Pancasila demi persatuan mencerminkan sikap….",
+      },
+    ],
     options: [
       {
         label: "A",
@@ -196,7 +244,12 @@ export const questions: Question[] = [
   {
     id: 10,
     category: "TWK",
-    questionText: "Sikap integritas sesuai dengan kompetensi KPK tercermin pada perilaku….",
+    content: [
+      {
+        type: "text",
+        value: "Sikap integritas sesuai dengan kompetensi KPK tercermin pada perilaku….",
+      },
+    ],
     options: [
       { label: "A", text: "Marizha selalu melaporkan kekayaannya kepada negara", points: 0 },
       {
@@ -212,8 +265,13 @@ export const questions: Question[] = [
   {
     id: 11,
     category: "TWK",
-    questionText:
-      "Berdasarkan kisah Herman Johannes merakit peledak untuk mempertahankan kemerdekaan, nilai integritas yang dimilikinya adalah….",
+    content: [
+      {
+        type: "text",
+        value:
+          "Berdasarkan kisah Herman Johannes merakit peledak untuk mempertahankan kemerdekaan, nilai integritas yang dimilikinya adalah….",
+      },
+    ],
     options: [
       {
         label: "A",
@@ -233,8 +291,13 @@ export const questions: Question[] = [
   {
     id: 12,
     category: "TWK",
-    questionText:
-      "Sikap yang bijak dalam menghadapi globalisasi sebagai negara yang memiliki ideologi terbuka adalah….",
+    content: [
+      {
+        type: "text",
+        value:
+          "Sikap yang bijak dalam menghadapi globalisasi sebagai negara yang memiliki ideologi terbuka adalah….",
+      },
+    ],
     options: [
       {
         label: "A",
@@ -262,8 +325,13 @@ export const questions: Question[] = [
   {
     id: 13,
     category: "TWK",
-    questionText:
-      "Apabila negara mendapatkan ancaman militer, sikap warga negara sebagai perwujudan bela negara adalah….",
+    content: [
+      {
+        type: "text",
+        value:
+          "Apabila negara mendapatkan ancaman militer, sikap warga negara sebagai perwujudan bela negara adalah….",
+      },
+    ],
     options: [
       { label: "A", text: "Membiarkan begitu saja penjajah masuk ke Indonesia", points: 0 },
       { label: "B", text: "Pergi ke luar negeri untuk mendapatkan suaka politik", points: 0 },
@@ -279,8 +347,13 @@ export const questions: Question[] = [
   {
     id: 14,
     category: "TWK",
-    questionText:
-      "Berdasarkan UUD 1945 pasal 30 ayat 1, perilaku bela negara yang dapat diwujudkan adalah….",
+    content: [
+      {
+        type: "text",
+        value:
+          "Berdasarkan UUD 1945 pasal 30 ayat 1, perilaku bela negara yang dapat diwujudkan adalah….",
+      },
+    ],
     options: [
       { label: "A", text: "Ponce selalu senang menggunakan baju batik setiap hari", points: 0 },
       { label: "B", text: "Dea menyimpan senjata untuk mengantisipasi penjajah", points: 0 },
@@ -296,7 +369,12 @@ export const questions: Question[] = [
   {
     id: 15,
     category: "TWK",
-    questionText: "Salah satu hak bela negara bagi warga negara Indonesia adalah….",
+    content: [
+      {
+        type: "text",
+        value: "Salah satu hak bela negara bagi warga negara Indonesia adalah….",
+      },
+    ],
     options: [
       { label: "A", text: "Hak untuk berpegang teguh terhadap Pancasila", points: 0 },
       { label: "B", text: "Hak untuk mematuhi peraturan hukum yang berlaku", points: 0 },
@@ -308,7 +386,12 @@ export const questions: Question[] = [
   {
     id: 16,
     category: "TWK",
-    questionText: "Keseimbangan antara hak dan kewajiban dalam pembelaan negara berarti….",
+    content: [
+      {
+        type: "text",
+        value: "Keseimbangan antara hak dan kewajiban dalam pembelaan negara berarti….",
+      },
+    ],
     options: [
       {
         label: "A",
@@ -336,8 +419,13 @@ export const questions: Question[] = [
   {
     id: 17,
     category: "TWK",
-    questionText:
-      "Cinta tanah air merupakan salah satu perwujudan bela negara. Hal tersebut tercermin dalam sikap….",
+    content: [
+      {
+        type: "text",
+        value:
+          "Cinta tanah air merupakan salah satu perwujudan bela negara. Hal tersebut tercermin dalam sikap….",
+      },
+    ],
     options: [
       {
         label: "A",
@@ -357,8 +445,13 @@ export const questions: Question[] = [
   {
     id: 18,
     category: "TWK",
-    questionText:
-      "Fenomena rendahnya literasi yang menyebabkan penyebaran berita bohong (hoaks) secara cepat berdampak pada bidang…",
+    content: [
+      {
+        type: "text",
+        value:
+          "Fenomena rendahnya literasi yang menyebabkan penyebaran berita bohong (hoaks) secara cepat berdampak pada bidang…",
+      },
+    ],
     options: [
       { label: "A", text: "Bidang Pendidikan", points: 0 },
       { label: "B", text: "Bidang sosial budaya", points: 0 },
@@ -370,8 +463,13 @@ export const questions: Question[] = [
   {
     id: 19,
     category: "TWK",
-    questionText:
-      "Demonstrasi aliansi BEM saat PPKM terkait pemecatan pegawai KPK bertentangan dengan Pancasila khususnya sila ke….",
+    content: [
+      {
+        type: "text",
+        value:
+          "Demonstrasi aliansi BEM saat PPKM terkait pemecatan pegawai KPK bertentangan dengan Pancasila khususnya sila ke….",
+      },
+    ],
     options: [
       { label: "A", text: "sila ke-1", points: 0 },
       { label: "B", text: "sila ke-3", points: 0 },
@@ -383,7 +481,12 @@ export const questions: Question[] = [
   {
     id: 20,
     category: "TWK",
-    questionText: "Prinsip kebebasan berpendapat yang bertanggung jawab di Indonesia artinya….",
+    content: [
+      {
+        type: "text",
+        value: "Prinsip kebebasan berpendapat yang bertanggung jawab di Indonesia artinya….",
+      },
+    ],
     options: [
       {
         label: "A",
@@ -407,8 +510,13 @@ export const questions: Question[] = [
   {
     id: 21,
     category: "TWK",
-    questionText:
-      "Pembangunan yang merugikan kepentingan umum (misal: lapangan golf di pemukiman nelayan) bertentangan dengan Pancasila berlambang….",
+    content: [
+      {
+        type: "text",
+        value:
+          "Pembangunan yang merugikan kepentingan umum (misal: lapangan golf di pemukiman nelayan) bertentangan dengan Pancasila berlambang….",
+      },
+    ],
     options: [
       { label: "A", text: "Garuda Pancasila", points: 0 },
       { label: "B", text: "Padi dan kapas", points: 5 },
@@ -420,8 +528,13 @@ export const questions: Question[] = [
   {
     id: 22,
     category: "TWK",
-    questionText:
-      "Jika DPR mengamandemen pasal masa jabatan presiden menjadi lebih dari dua periode, maka dampaknya adalah….",
+    content: [
+      {
+        type: "text",
+        value:
+          "Jika DPR mengamandemen pasal masa jabatan presiden menjadi lebih dari dua periode, maka dampaknya adalah….",
+      },
+    ],
     options: [
       {
         label: "A",
@@ -441,8 +554,13 @@ export const questions: Question[] = [
   {
     id: 23,
     category: "TWK",
-    questionText:
-      "Berikut ini perilaku yang mencerminkan demokrasi di kehidupan masyarakat Indonesia adalah….",
+    content: [
+      {
+        type: "text",
+        value:
+          "Berikut ini perilaku yang mencerminkan demokrasi di kehidupan masyarakat Indonesia adalah….",
+      },
+    ],
     options: [
       {
         label: "A",
@@ -462,8 +580,13 @@ export const questions: Question[] = [
   {
     id: 24,
     category: "TWK",
-    questionText:
-      "Pembukaan UUD 1945 tidak boleh diamandemen karena mengubahnya berarti mengubah NKRI. Hal ini bermakna….",
+    content: [
+      {
+        type: "text",
+        value:
+          "Pembukaan UUD 1945 tidak boleh diamandemen karena mengubahnya berarti mengubah NKRI. Hal ini bermakna….",
+      },
+    ],
     options: [
       { label: "A", text: "Bagian yang boleh diamandemen hanya batang tubuh saja", points: 0 },
       {
@@ -479,8 +602,13 @@ export const questions: Question[] = [
   {
     id: 25,
     category: "TWK",
-    questionText:
-      "Berdasarkan wacana tentang Sasa dan Suma, nilai sosial yang terdapat pada penggalan cerita tersebut adalah….",
+    content: [
+      {
+        type: "text",
+        value:
+          "Berdasarkan wacana tentang Sasa dan Suma, nilai sosial yang terdapat pada penggalan cerita tersebut adalah….",
+      },
+    ],
     options: [
       { label: "A", text: "Suma memiliki penyakit jantung", points: 0 },
       { label: "B", text: "Sasa menyesal kenapa menikah dengan Suma", points: 5 },
@@ -492,7 +620,12 @@ export const questions: Question[] = [
   {
     id: 26,
     category: "TWK",
-    questionText: "Di bawah ini kalimat efektif yang benar adalah….",
+    content: [
+      {
+        type: "text",
+        value: "Di bawah ini kalimat efektif yang benar adalah….",
+      },
+    ],
     options: [
       {
         label: "A",
@@ -512,7 +645,12 @@ export const questions: Question[] = [
   {
     id: 27,
     category: "TWK",
-    questionText: "Penggunaan kalimat baku yang tepat ditunjukkan pada kalimat….",
+    content: [
+      {
+        type: "text",
+        value: "Penggunaan kalimat baku yang tepat ditunjukkan pada kalimat….",
+      },
+    ],
     options: [
       {
         label: "A",
@@ -540,8 +678,13 @@ export const questions: Question[] = [
   {
     id: 28,
     category: "TWK",
-    questionText:
-      "Berdasarkan wacana tentang bantuan rumah tidak layak huni, perbaikan kata yang tepat adalah….",
+    content: [
+      {
+        type: "text",
+        value:
+          "Berdasarkan wacana tentang bantuan rumah tidak layak huni, perbaikan kata yang tepat adalah….",
+      },
+    ],
     options: [
       { label: "A", text: "bantuan seharusnya pembantuan", points: 0 },
       { label: "B", text: "menyediakan seharusnya bersedia", points: 0 },
@@ -553,8 +696,13 @@ export const questions: Question[] = [
   {
     id: 29,
     category: "TWK",
-    questionText:
-      "Berdasarkan wacana Yahya dan Uge yang mengadopsi Uya, nilai moral dalam cerita tersebut adalah….",
+    content: [
+      {
+        type: "text",
+        value:
+          "Berdasarkan wacana Yahya dan Uge yang mengadopsi Uya, nilai moral dalam cerita tersebut adalah….",
+      },
+    ],
     options: [
       { label: "A", text: "Uya sangat menyayangi ibu angkatnya", points: 0 },
       { label: "B", text: "Wajah Uya hampir sama dengan ibu angkatnya", points: 0 },
@@ -566,7 +714,12 @@ export const questions: Question[] = [
   {
     id: 30,
     category: "TWK",
-    questionText: "Berdasarkan penggalan paragraf tentang Fatma dan Deni, ide pokoknya adalah….",
+    content: [
+      {
+        type: "text",
+        value: "Berdasarkan penggalan paragraf tentang Fatma dan Deni, ide pokoknya adalah….",
+      },
+    ],
     options: [
       { label: "A", text: "Kehidupannya setelah berumah tangga jauh dari kata bahagia", points: 0 },
       {
@@ -586,8 +739,13 @@ export const questions: Question[] = [
   {
     id: 31,
     category: "TIU",
-    questionText:
-      "Suatu seri angka sebagai berikut: 58, 96, 73, 86, 88, 76, …, … seri selanjutnya adalah…",
+    content: [
+      {
+        type: "text",
+        value:
+          "Suatu seri angka sebagai berikut: 58, 96, 73, 86, 88, 76, …, … seri selanjutnya adalah…",
+      },
+    ],
     options: [
       { label: "A", text: "104, 55", points: 0 },
       { label: "B", text: "102, 88", points: 0 },
@@ -599,7 +757,12 @@ export const questions: Question[] = [
   {
     id: 32,
     category: "TIU",
-    questionText: "Suatu seri angka sebagai berikut: 4, 6, 10, 16, 26, … seri selanjutnya adalah…",
+    content: [
+      {
+        type: "text",
+        value: "Suatu seri angka sebagai berikut: 4, 6, 10, 16, 26, … seri selanjutnya adalah…",
+      },
+    ],
     options: [
       { label: "A", text: "10", points: 0 },
       { label: "B", text: "16", points: 0 },
@@ -611,7 +774,12 @@ export const questions: Question[] = [
   {
     id: 33,
     category: "TIU",
-    questionText: "Suatu seri angka sebagai berikut: 3, 12, 48, 192, … seri selanjutnya adalah…",
+    content: [
+      {
+        type: "text",
+        value: "Suatu seri angka sebagai berikut: 3, 12, 48, 192, … seri selanjutnya adalah…",
+      },
+    ],
     options: [
       { label: "A", text: "700", points: 0 },
       { label: "B", text: "855", points: 0 },
@@ -623,8 +791,13 @@ export const questions: Question[] = [
   {
     id: 34,
     category: "TIU",
-    questionText:
-      "Suatu seri angka sebagai berikut: 60, 10, 70, 7, 80, 4, 90, … seri selanjutnya adalah..",
+    content: [
+      {
+        type: "text",
+        value:
+          "Suatu seri angka sebagai berikut: 60, 10, 70, 7, 80, 4, 90, … seri selanjutnya adalah..",
+      },
+    ],
     options: [
       { label: "A", text: "4", points: 0 },
       { label: "B", text: "1", points: 5 },
@@ -636,9 +809,11 @@ export const questions: Question[] = [
   {
     id: 35,
     category: "TIU",
-    questionText:
-      "Sebuah pabrik memproduksi 50 roti dalam waktu 60 menit. Manakah hubungan yang benar antara kuantitas A dan B berikut?",
-    questionImage: "/tryout-1/question-35.png",
+    content: [
+      { type: "text", value: "Sebuah pabrik memproduksi 50 roti dalam waktu 60 menit." },
+      { type: "image", value: "/tryout-1/question-35.png" },
+      { type: "text", value: "Manakah hubungan yang benar antara kuantitas A dan B berikut?" },
+    ],
     options: [
       { label: "A", text: "A > B", points: 0 },
       { label: "B", text: "2A > B", points: 0 },
@@ -650,9 +825,10 @@ export const questions: Question[] = [
   {
     id: 36,
     category: "TIU",
-    questionText:
-      "Diketahui x = 2, y = 3. Manakah hubungan yang benar antara kuantitas A dan B berikut?",
-    questionImage: "/tryout-1/question-36.png",
+    content: [
+      { type: "text", value: "Diketahui x = 2, y = 3." },
+      { type: "image", value: "/tryout-1/question-36.png" },
+    ],
     options: [
       { label: "A", text: "A > B", points: 0 },
       { label: "B", text: "A + 2 = B", points: 5 },
@@ -664,8 +840,13 @@ export const questions: Question[] = [
   {
     id: 37,
     category: "TIU",
-    questionText:
-      "Satu lusin baju dibeli dengan harga Rp. 480.000. berapakah harga 15 baju yang sama?",
+    content: [
+      {
+        type: "text",
+        value:
+          "Satu lusin baju dibeli dengan harga Rp. 480.000. berapakah harga 15 baju yang sama?",
+      },
+    ],
     options: [
       { label: "A", text: "Rp. 540.000", points: 0 },
       { label: "B", text: "Rp. 560.000", points: 0 },
@@ -677,7 +858,12 @@ export const questions: Question[] = [
   {
     id: 38,
     category: "TIU",
-    questionText: "Harga 14 buku adalah Rp. 65.800, maka harga 35 buku adalah…",
+    content: [
+      {
+        type: "text",
+        value: "Harga 14 buku adalah Rp. 65.800, maka harga 35 buku adalah…",
+      },
+    ],
     options: [
       { label: "A", text: "Rp. 142.100", points: 0 },
       { label: "B", text: "Rp. 142.450", points: 0 },
@@ -689,8 +875,13 @@ export const questions: Question[] = [
   {
     id: 39,
     category: "TIU",
-    questionText:
-      "6 orang pelari (Ayu, Budi, Cica, Dede, Egi, Fajar) berlomba. Budi tidak mampu mengungguli Cica, Dede lebih cepat dari Cica, Egi tidak bisa mendahului Dede, Fajar lebih cepat dibanding Budi, Ayu lebih unggul dari Dede. Siapa yang mendapatkan medali emas?",
+    content: [
+      {
+        type: "text",
+        value:
+          "6 orang pelari (Ayu, Budi, Cica, Dede, Egi, Fajar) berlomba. Budi tidak mampu mengungguli Cica, Dede lebih cepat dari Cica, Egi tidak bisa mendahului Dede, Fajar lebih cepat dibanding Budi, Ayu lebih unggul dari Dede. Siapa yang mendapatkan medali emas?",
+      },
+    ],
     options: [
       { label: "A", text: "Ayu", points: 5 },
       { label: "B", text: "Budi", points: 0 },
@@ -702,8 +893,13 @@ export const questions: Question[] = [
   {
     id: 40,
     category: "TIU",
-    questionText:
-      "Berdasarkan informasi pelari di atas, siapa yang mencapai garis finish di urutan ke-2?",
+    content: [
+      {
+        type: "text",
+        value:
+          "Berdasarkan informasi pelari di atas, siapa yang mencapai garis finish di urutan ke-2?",
+      },
+    ],
     options: [
       { label: "A", text: "Ayu", points: 0 },
       { label: "B", text: "Budi", points: 0 },
@@ -715,7 +911,12 @@ export const questions: Question[] = [
   {
     id: 41,
     category: "TIU",
-    questionText: "Berdasarkan informasi pelari di atas, Cica finish di urutan ke berapa?",
+    content: [
+      {
+        type: "text",
+        value: "Berdasarkan informasi pelari di atas, Cica finish di urutan ke berapa?",
+      },
+    ],
     options: [
       { label: "A", text: "2", points: 0 },
       { label: "B", text: "3", points: 0 },
@@ -727,7 +928,12 @@ export const questions: Question[] = [
   {
     id: 42,
     category: "TIU",
-    questionText: "Berdasarkan informasi pelari di atas, Fajar hanya berlari lebih cepat dari?",
+    content: [
+      {
+        type: "text",
+        value: "Berdasarkan informasi pelari di atas, Fajar hanya berlari lebih cepat dari?",
+      },
+    ],
     options: [
       { label: "A", text: "Ayu", points: 0 },
       { label: "B", text: "Budi", points: 5 },
@@ -739,7 +945,12 @@ export const questions: Question[] = [
   {
     id: 43,
     category: "TIU",
-    questionText: "Urutan pelari dari yang tercepat adalah?",
+    content: [
+      {
+        type: "text",
+        value: "Urutan pelari dari yang tercepat adalah?",
+      },
+    ],
     options: [
       { label: "A", text: "Ayu – Dede – Egi – Cica – Fajar – Budi", points: 5 },
       { label: "B", text: "Ayu – Egi – Dede – Cica – Fajar – Budi", points: 0 },
@@ -751,7 +962,12 @@ export const questions: Question[] = [
   {
     id: 44,
     category: "TIU",
-    questionText: "Nilai dari $\\frac{3}{4} \\div \\frac{2}{3} = \\dots$",
+    content: [
+      {
+        type: "text",
+        value: "Nilai dari $\\frac{3}{4} \\div \\frac{2}{3} = \\dots$",
+      },
+    ],
     options: [
       { label: "A", text: "$\\frac{8}{9}$", points: 0 },
       { label: "B", text: "$\\frac{9}{8}$", points: 5 },
@@ -763,7 +979,12 @@ export const questions: Question[] = [
   {
     id: 45,
     category: "TIU",
-    questionText: "Nilai $12 \\times 11 \\div \\frac{1}{10} = \\dots$",
+    content: [
+      {
+        type: "text",
+        value: "Nilai $12 \\times 11 \\div \\frac{1}{10} = \\dots$",
+      },
+    ],
     options: [
       { label: "A", text: "1320", points: 5 },
       { label: "B", text: "1321", points: 0 },
@@ -775,7 +996,12 @@ export const questions: Question[] = [
   {
     id: 46,
     category: "TIU",
-    questionText: "Nilai dari $\\frac{1}{6} - 3 \\frac{1}{2} + \\frac{6}{3} = \\dots$",
+    content: [
+      {
+        type: "text",
+        value: "Nilai dari $\\frac{1}{6} - 3 \\frac{1}{2} + \\frac{6}{3} = \\dots$",
+      },
+    ],
     options: [
       { label: "A", text: "$-\\frac{1}{4}$", points: 0 },
       { label: "B", text: "$\\frac{4}{3}$", points: 0 },
@@ -787,8 +1013,13 @@ export const questions: Question[] = [
   {
     id: 47,
     category: "TIU",
-    questionText:
-      "Semua peserta CPNS wajib menggunakan kemeja putih dan celana hitam. Aldi adalah peserta CPNS, simpulan yang tepat adalah…",
+    content: [
+      {
+        type: "text",
+        value:
+          "Semua peserta CPNS wajib menggunakan kemeja putih dan celana hitam. Aldi adalah peserta CPNS, simpulan yang tepat adalah…",
+      },
+    ],
     options: [
       { label: "A", text: "Aldi menggunakan kemeja putih", points: 0 },
       { label: "B", text: "Aldi menggunakan celana hitam", points: 0 },
@@ -800,8 +1031,13 @@ export const questions: Question[] = [
   {
     id: 48,
     category: "TIU",
-    questionText:
-      "Jika rajin belajar, Adi dapat diterima di sekolah kedinasan favorit. Adi tidak diterima di sekolah kedinasan. Simpulan yang tepat adalah…",
+    content: [
+      {
+        type: "text",
+        value:
+          "Jika rajin belajar, Adi dapat diterima di sekolah kedinasan favorit. Adi tidak diterima di sekolah kedinasan. Simpulan yang tepat adalah…",
+      },
+    ],
     options: [
       { label: "A", text: "Adi rajin belajar", points: 0 },
       { label: "B", text: "Adi tidak rajin belajar", points: 5 },
@@ -813,8 +1049,13 @@ export const questions: Question[] = [
   {
     id: 49,
     category: "TIU",
-    questionText:
-      "Tidak semua pengusaha kaya. Beberapa peserta seleksi adalah pengusaha. Simpulan yang tepat adalah…",
+    content: [
+      {
+        type: "text",
+        value:
+          "Tidak semua pengusaha kaya. Beberapa peserta seleksi adalah pengusaha. Simpulan yang tepat adalah…",
+      },
+    ],
     options: [
       { label: "A", text: "Semua pengusaha adalah peserta seleksi", points: 0 },
       { label: "B", text: "Semua peserta seleksi tidak kaya", points: 0 },
@@ -826,8 +1067,13 @@ export const questions: Question[] = [
   {
     id: 50,
     category: "TIU",
-    questionText:
-      "Semua siswa kelas 9 SMP adalah murid yang pintar. Agung bukan siswa kelas 9 SMP. Simpulan yang tepat adalah...",
+    content: [
+      {
+        type: "text",
+        value:
+          "Semua siswa kelas 9 SMP adalah murid yang pintar. Agung bukan siswa kelas 9 SMP. Simpulan yang tepat adalah...",
+      },
+    ],
     options: [
       { label: "A", text: "Agung adalah murid yang pintar", points: 0 },
       { label: "B", text: "Agung adalah murid yang tidak pintar", points: 5 },
@@ -839,8 +1085,13 @@ export const questions: Question[] = [
   {
     id: 51,
     category: "TIU",
-    questionText:
-      "Semua peserta CPNS tahun 2023 melaksanakan SKD di BKN dan menggunakan kemeja putih. Budi berada di BKN, namun ia menggunakan pakaian batik. Simpulan yang tepat adalah...",
+    content: [
+      {
+        type: "text",
+        value:
+          "Semua peserta CPNS tahun 2023 melaksanakan SKD di BKN dan menggunakan kemeja putih. Budi berada di BKN, namun ia menggunakan pakaian batik. Simpulan yang tepat adalah...",
+      },
+    ],
     options: [
       { label: "A", text: "Budi tidak berada di BKN", points: 0 },
       { label: "B", text: "Budi sedang di rumahnya", points: 0 },
@@ -852,7 +1103,12 @@ export const questions: Question[] = [
   {
     id: 52,
     category: "TIU",
-    questionText: "Dosen : Universitas = …",
+    content: [
+      {
+        type: "text",
+        value: "Dosen : Universitas = …",
+      },
+    ],
     options: [
       { label: "A", text: "Mahasiswa : Kuliah", points: 0 },
       { label: "B", text: "Guru : Murid", points: 0 },
@@ -864,7 +1120,12 @@ export const questions: Question[] = [
   {
     id: 53,
     category: "TIU",
-    questionText: "Memasak : Kompor = Menulis : …",
+    content: [
+      {
+        type: "text",
+        value: "Memasak : Kompor = Menulis : …",
+      },
+    ],
     options: [
       { label: "A", text: "Sekolah", points: 0 },
       { label: "B", text: "Pulpen", points: 5 },
@@ -876,7 +1137,12 @@ export const questions: Question[] = [
   {
     id: 54,
     category: "TIU",
-    questionText: "Sutradara : Film = …",
+    content: [
+      {
+        type: "text",
+        value: "Sutradara : Film = …",
+      },
+    ],
     options: [
       { label: "A", text: "Penulis : Buku", points: 5 },
       { label: "B", text: "Bermain musik : Orkestra", points: 0 },
@@ -888,8 +1154,13 @@ export const questions: Question[] = [
   {
     id: 55,
     category: "TIU",
-    questionText:
-      "Tukang kebun mencari sekop yang hilang di halaman. Pola kalimat tersebut sama dengan pola kalimat…",
+    content: [
+      {
+        type: "text",
+        value:
+          "Tukang kebun mencari sekop yang hilang di halaman. Pola kalimat tersebut sama dengan pola kalimat…",
+      },
+    ],
     options: [
       { label: "A", text: "Petani berladang di tengah perkebunan", points: 0 },
       { label: "B", text: "Mereka bertani dengan penuh dedikasi", points: 0 },
@@ -901,8 +1172,13 @@ export const questions: Question[] = [
   {
     id: 56,
     category: "TIU",
-    questionText:
-      "Benda itu belum dapat dimanfaatkan di dunia teknologi. Pola kalimat tersebut sama dengan pola kalimat…",
+    content: [
+      {
+        type: "text",
+        value:
+          "Benda itu belum dapat dimanfaatkan di dunia teknologi. Pola kalimat tersebut sama dengan pola kalimat…",
+      },
+    ],
     options: [
       {
         label: "A",
@@ -918,8 +1194,13 @@ export const questions: Question[] = [
   {
     id: 57,
     category: "TIU",
-    questionText:
-      "Bunga mawar merah muda memiliki warna yang sangat memikat. Pola kalimat tersebut setara dengan pola kalimat…",
+    content: [
+      {
+        type: "text",
+        value:
+          "Bunga mawar merah muda memiliki warna yang sangat memikat. Pola kalimat tersebut setara dengan pola kalimat…",
+      },
+    ],
     options: [
       { label: "A", text: "Dani menjual pepaya yang sangat manis", points: 5 },
       { label: "B", text: "Populasi pohon durian di Medan cukup besar", points: 0 },
@@ -931,8 +1212,13 @@ export const questions: Question[] = [
   {
     id: 58,
     category: "TIU",
-    questionText:
-      "Saya menyelesaikan tugas ini dengan hati-hati. Pola kalimat tersebut sama dengan pola kalimat…",
+    content: [
+      {
+        type: "text",
+        value:
+          "Saya menyelesaikan tugas ini dengan hati-hati. Pola kalimat tersebut sama dengan pola kalimat…",
+      },
+    ],
     options: [
       { label: "A", text: "Acara tersebut akan diadakan minggu depan", points: 0 },
       {
@@ -948,9 +1234,15 @@ export const questions: Question[] = [
   {
     id: 59,
     category: "TIU",
-    questionText:
-      "Jika belajar sebelum pukul 18.00 dianggap belajar lebih awal dan belajar pukul 21.00 ke atas dianggap belajar lebih malam, pernyataan yang benar berdasarkan tabel adalah…",
-    questionImage: "/tryout-1/question-59.png",
+    content: [
+      { type: "text", value: "Perhatikan tabel berikut ini!" },
+      { type: "image", value: "/tryout-1/question-59.png" },
+      {
+        type: "text",
+        value:
+          "Jika belajar sebelum pukul 18.00 dianggap belajar lebih awal dan belajar pukul 21.00 ke atas dianggap belajar lebih malam, pernyataan yang benar adalah…",
+      },
+    ],
     options: [
       { label: "A", text: "Pelajar kelas 8 cenderung belajar lebih malam", points: 5 },
       { label: "B", text: "Pelajar kelas 12 cenderung belajar lebih awal", points: 0 },
@@ -962,9 +1254,17 @@ export const questions: Question[] = [
   {
     id: 60,
     category: "TIU",
-    questionText:
-      "Pilihlah salah satu dari gambar A, B, C, D dan E untuk mengisi kotak nomor 4 sehingga memiliki hubungan yang sama dengan gambar 1 dan 2!",
-    questionImage: "/tryout-1/question-60.png",
+    content: [
+      {
+        type: "text",
+        value:
+          "Pilihlah salah satu dari gambar A, B, C, D dan E untuk mengisi kotak nomor 4 sehingga memiliki hubungan yang sama dengan gambar 1 dan 2!",
+      },
+      {
+        type: "image",
+        value: "/tryout-1/question-60.png",
+      },
+    ],
     options: [
       { label: "A", text: "Opsi A", image: "/tryout-1/question-60-opsi-A.png", points: 0 },
       { label: "B", text: "Opsi B", image: "/tryout-1/question-60-opsi-B.png", points: 0 },
@@ -976,8 +1276,20 @@ export const questions: Question[] = [
   {
     id: 61,
     category: "TIU",
-    questionText: "Analogi Gambar: Pilihlah gambar yang sesuai untuk mengisi kotak kosong!",
-    questionImage: "/tryout-1/question-61.png",
+    content: [
+      {
+        type: "text",
+        value: "Analogi Gambar",
+      },
+      {
+        type: "text",
+        value: "Pilihlah gambar yang sesuai untuk mengisi kotak kosong!",
+      },
+      {
+        type: "image",
+        value: "/tryout-1/question-61.png",
+      },
+    ],
     options: [
       { label: "A", text: "Opsi A", image: "/tryout-1/question-61-opsi-A.png", points: 0 },
       { label: "B", text: "Opsi B", image: "/tryout-1/question-61-opsi-B.png", points: 5 },
@@ -989,8 +1301,17 @@ export const questions: Question[] = [
   {
     id: 62,
     category: "TIU",
-    questionText: "Analogi Gambar: Tentukan gambar ke-4 berdasarkan pola hubungan gambar 1 dan 2!",
-    questionImage: "/tryout-1/question-62.png",
+
+    content: [
+      {
+        type: "text",
+        value: "Analogi Gambar: Tentukan gambar ke-4 berdasarkan pola hubungan gambar 1 dan 2!",
+      },
+      {
+        type: "image",
+        value: "/tryout-1/question-62.png",
+      },
+    ],
     options: [
       { label: "A", text: "Opsi A", image: "/tryout-1/question-62-opsi-A.png", points: 0 },
       { label: "B", text: "Opsi B", image: "/tryout-1/question-62-opsi-B.png", points: 0 },
@@ -1002,8 +1323,16 @@ export const questions: Question[] = [
   {
     id: 63,
     category: "TIU",
-    questionText: "Serial Gambar: Pilihlah kelanjutan gambar yang paling tepat!",
-    questionImage: "/tryout-1/question-63.png",
+    content: [
+      {
+        type: "text",
+        value: "Serial Gambar: Pilihlah kelanjutan gambar yang paling tepat!",
+      },
+      {
+        type: "image",
+        value: "/tryout-1/question-63.png",
+      },
+    ],
     options: [
       { label: "A", text: "Opsi A", image: "/tryout-1/question-63-opsi-A.png", points: 0 },
       { label: "B", text: "Opsi B", image: "/tryout-1/question-63-opsi-B.png", points: 0 },
@@ -1015,8 +1344,16 @@ export const questions: Question[] = [
   {
     id: 64,
     category: "TIU",
-    questionText: "Serial Gambar: Tentukan gambar selanjutnya dalam urutan berikut!",
-    questionImage: "/tryout-1/question-64.png",
+    content: [
+      {
+        type: "text",
+        value: "Serial Gambar: Tentukan gambar selanjutnya dalam urutan berikut!",
+      },
+      {
+        type: "image",
+        value: "/tryout-1/question-64.png",
+      },
+    ],
     options: [
       { label: "A", text: "Opsi A", image: "/tryout-1/question-64-opsi-A.png", points: 5 },
       { label: "B", text: "Opsi B", image: "/tryout-1/question-64-opsi-B.png", points: 0 },
@@ -1028,8 +1365,12 @@ export const questions: Question[] = [
   {
     id: 65,
     category: "TIU",
-    questionText: "Figural: Pilihlah satu gambar yang berbeda dari keempat gambar lainnya!",
-    questionImage: "/tryout-1/question-65.png",
+    content: [
+      {
+        type: "text",
+        value: "Figural: Pilihlah satu gambar yang berbeda dari keempat gambar lainnya!",
+      },
+    ],
     options: [
       { label: "A", text: "Opsi A", image: "/tryout-1/question-65-opsi-A.png", points: 0 },
       { label: "B", text: "Opsi B", image: "/tryout-1/question-65-opsi-B.png", points: 0 },
@@ -1041,8 +1382,13 @@ export const questions: Question[] = [
   {
     id: 66,
     category: "TKP",
-    questionText:
-      "Seorang tukang diminta untuk menata ruang tempat Anda bekerja, ternyata setelah Anda lihat ada beberapa posisi barang yang dirasa kurang pas. Sikap Anda …",
+    content: [
+      {
+        type: "text",
+        value:
+          "Seorang tukang diminta untuk menata ruang tempat Anda bekerja, ternyata setelah Anda lihat ada beberapa posisi barang yang dirasa kurang pas. Sikap Anda …",
+      },
+    ],
     options: [
       { label: "A", text: "Memanggil tukang dan komplain karena kerjanya tidak beres", points: 3 },
       {
@@ -1062,8 +1408,13 @@ export const questions: Question[] = [
   {
     id: 67,
     category: "TKP",
-    questionText:
-      "Saat melayani pendaftaran ulang siswa baru di sekolah, Yeti diprotes orang tua siswa karena tidak ramah serta terlalu lama dalam melayani. Sikap Yeti seharusnya ….",
+    content: [
+      {
+        type: "text",
+        value:
+          "Saat melayani pendaftaran ulang siswa baru di sekolah, Yeti diprotes orang tua siswa karena tidak ramah serta terlalu lama dalam melayani. Sikap Yeti seharusnya ….",
+      },
+    ],
     options: [
       { label: "A", text: "Meminta maaf", points: 2 },
       {
@@ -1079,8 +1430,13 @@ export const questions: Question[] = [
   {
     id: 68,
     category: "TKP",
-    questionText:
-      "Saat sedang mengecek data siswa kebetulan Anda terkendala koneksi internet yang buruk sehingga banyak orangtua siswa baru yang protes. Sikap Anda",
+    content: [
+      {
+        type: "text",
+        value:
+          "Saat sedang mengecek data siswa kebetulan Anda terkendala koneksi internet yang buruk sehingga banyak orangtua siswa baru yang protes. Sikap Anda",
+      },
+    ],
     options: [
       { label: "A", text: "Meminta maaf", points: 2 },
       {
@@ -1100,8 +1456,13 @@ export const questions: Question[] = [
   {
     id: 69,
     category: "TKP",
-    questionText:
-      "PPKM di daerah Anda yang semula level 2 kembali menjadi level 3 karena presentase lansia yang sudah divaksin belum 50%. Sebagai bupati, upaya Anda adalah...",
+    content: [
+      {
+        type: "text",
+        value:
+          "PPKM di daerah Anda yang semula level 2 kembali menjadi level 3 karena presentase lansia yang sudah divaksin belum 50%. Sebagai bupati, upaya Anda adalah...",
+      },
+    ],
     options: [
       {
         label: "A",
@@ -1121,8 +1482,13 @@ export const questions: Question[] = [
   {
     id: 70,
     category: "TKP",
-    questionText:
-      "Ketika melayani nasabah, teman Anda yang bertugas sebagai teller pingsan karena kelelahan. Antrean di tempat Anda sedang kosong, sikap Anda ….",
+    content: [
+      {
+        type: "text",
+        value:
+          "Ketika melayani nasabah, teman Anda yang bertugas sebagai teller pingsan karena kelelahan. Antrean di tempat Anda sedang kosong, sikap Anda ….",
+      },
+    ],
     options: [
       { label: "A", text: "Meminta nasabah untuk mengantre di loket Anda saja", points: 2 },
       {
@@ -1146,8 +1512,13 @@ export const questions: Question[] = [
   {
     id: 71,
     category: "TKP",
-    questionText:
-      "Ketika nasabah tidak paham instruksi dalam mengisi form pembukaan rekening, yang Anda lakukan sebagai petugas pelayanan adalah ….",
+    content: [
+      {
+        type: "text",
+        value:
+          "Ketika nasabah tidak paham instruksi dalam mengisi form pembukaan rekening, yang Anda lakukan sebagai petugas pelayanan adalah ….",
+      },
+    ],
     options: [
       { label: "A", text: "Mengulang instruksi berkali-kali", points: 4 },
       {
@@ -1167,7 +1538,12 @@ export const questions: Question[] = [
   {
     id: 72,
     category: "TKP",
-    questionText: "Ketika menyelesaikan laporan kantor yang ditugaskan atasan, maka Anda ….",
+    content: [
+      {
+        type: "text",
+        value: "Ketika menyelesaikan laporan kantor yang ditugaskan atasan, maka Anda ….",
+      },
+    ],
     options: [
       { label: "A", text: "Menyelesaikan sesuai arahan atasan", points: 4 },
       { label: "B", text: "Menyelesaikan secepat mungkin agar terkesan rajin", points: 1 },
@@ -1179,8 +1555,13 @@ export const questions: Question[] = [
   {
     id: 73,
     category: "TKP",
-    questionText:
-      "Sebagai Lurah, menyikapi keluhan masyarakat terkait penerima bansos yang tidak merata dan kurang tepat sasaran, Anda akan …",
+    content: [
+      {
+        type: "text",
+        value:
+          "Sebagai Lurah, menyikapi keluhan masyarakat terkait penerima bansos yang tidak merata dan kurang tepat sasaran, Anda akan …",
+      },
+    ],
     options: [
       {
         label: "A",
@@ -1204,8 +1585,13 @@ export const questions: Question[] = [
   {
     id: 74,
     category: "TKP",
-    questionText:
-      "Seorang guru sering mangkir dari jadwal intensifikasi kelas XII. Sebagai Wakil Kepala Sekolah Urusan Kurikulum, sikap Anda …",
+    content: [
+      {
+        type: "text",
+        value:
+          "Seorang guru sering mangkir dari jadwal intensifikasi kelas XII. Sebagai Wakil Kepala Sekolah Urusan Kurikulum, sikap Anda …",
+      },
+    ],
     options: [
       {
         label: "A",
@@ -1225,8 +1611,13 @@ export const questions: Question[] = [
   {
     id: 75,
     category: "TKP",
-    questionText:
-      "Ada berkas penting butuh tanda tangan Kepala Sekolah yang sedang tidak di tempat. Sebagai Wakil Kepala Sekolah, Anda …",
+    content: [
+      {
+        type: "text",
+        value:
+          "Ada berkas penting butuh tanda tangan Kepala Sekolah yang sedang tidak di tempat. Sebagai Wakil Kepala Sekolah, Anda …",
+      },
+    ],
     options: [
       { label: "A", text: "Menelpon Kepala Sekolah untuk meminta pendapat", points: 4 },
       { label: "B", text: "Mewakili menandatangani dokumen", points: 2 },
@@ -1246,8 +1637,13 @@ export const questions: Question[] = [
   {
     id: 76,
     category: "TKP",
-    questionText:
-      "Seorang anggota tim kurang cekatan karena sedang hamil sehingga tugas kelompok terbengkalai. Sikap Anda …",
+    content: [
+      {
+        type: "text",
+        value:
+          "Seorang anggota tim kurang cekatan karena sedang hamil sehingga tugas kelompok terbengkalai. Sikap Anda …",
+      },
+    ],
     options: [
       { label: "A", text: "Mengonfirmasi apakah ia masih sanggup bekerja", points: 4 },
       { label: "B", text: "Membantu pekerjaan teman tersebut agar selesai", points: 5 },
@@ -1267,8 +1663,13 @@ export const questions: Question[] = [
   {
     id: 77,
     category: "TKP",
-    questionText:
-      "Sebagai laboran, Anda mendapat kritik bahwa banyak alat laboratorium tidak berfungsi baik. Sikap Anda …",
+    content: [
+      {
+        type: "text",
+        value:
+          "Sebagai laboran, Anda mendapat kritik bahwa banyak alat laboratorium tidak berfungsi baik. Sikap Anda …",
+      },
+    ],
     options: [
       { label: "A", text: "Mengecek alat dan mencoba melakukan kalibrasi ulang", points: 4 },
       {
@@ -1284,8 +1685,13 @@ export const questions: Question[] = [
   {
     id: 78,
     category: "TKP",
-    questionText:
-      "Rekan kerja dalam tim terlihat kurang disiplin dan ogah-ogahan di tengah proyek. Sikap Anda …",
+    content: [
+      {
+        type: "text",
+        value:
+          "Rekan kerja dalam tim terlihat kurang disiplin dan ogah-ogahan di tengah proyek. Sikap Anda …",
+      },
+    ],
     options: [
       {
         label: "A",
@@ -1313,7 +1719,12 @@ export const questions: Question[] = [
   {
     id: 79,
     category: "TKP",
-    questionText: "Tugas tim terhambat karena kurang kompak. Sebagai ketua tim, Anda akan …",
+    content: [
+      {
+        type: "text",
+        value: "Tugas tim terhambat karena kurang kompak. Sebagai ketua tim, Anda akan …",
+      },
+    ],
     options: [
       { label: "A", text: "Menegur semua anggota tim", points: 1 },
       { label: "B", text: "Melakukan evaluasi, diskusi, dan meningkatkan kekompakan", points: 5 },
@@ -1325,8 +1736,13 @@ export const questions: Question[] = [
   {
     id: 80,
     category: "TKP",
-    questionText:
-      "Anda menilai sekolah untuk akreditasi, namun rekan tim baru selesai cuti melahirkan sehingga kurang fokus. Sikap Anda …",
+    content: [
+      {
+        type: "text",
+        value:
+          "Anda menilai sekolah untuk akreditasi, namun rekan tim baru selesai cuti melahirkan sehingga kurang fokus. Sikap Anda …",
+      },
+    ],
     options: [
       { label: "A", text: "Memaklumi karena hal tersebut tidak terhindarkan", points: 2 },
       { label: "B", text: "Menegur agar bisa fokus bekerja", points: 1 },
@@ -1342,8 +1758,13 @@ export const questions: Question[] = [
   {
     id: 81,
     category: "TKP",
-    questionText:
-      "Ketika terjadi pergantian pimpinan di perusahaan, sikap Anda sebagai karyawan adalah …",
+    content: [
+      {
+        type: "text",
+        value:
+          "Ketika terjadi pergantian pimpinan di perusahaan, sikap Anda sebagai karyawan adalah …",
+      },
+    ],
     options: [
       { label: "A", text: "Menerima apapun perubahan meski terasa berat", points: 4 },
       { label: "B", text: "Mengikuti segala kebijakan yang diterapkan pimpinan baru", points: 5 },
@@ -1355,8 +1776,13 @@ export const questions: Question[] = [
   {
     id: 82,
     category: "TKP",
-    questionText:
-      "Saat bertamu ke tetangga, teman menelpon ingin bertanya soal tes SKB yang baru Anda ikuti. Sikap Anda …",
+    content: [
+      {
+        type: "text",
+        value:
+          "Saat bertamu ke tetangga, teman menelpon ingin bertanya soal tes SKB yang baru Anda ikuti. Sikap Anda …",
+      },
+    ],
     options: [
       { label: "A", text: "Mengatakan sedang di luar dan tidak bisa bicara lama", points: 2 },
       { label: "B", text: "Meminta maaf karena sedang sibuk", points: 1 },
@@ -1368,8 +1794,13 @@ export const questions: Question[] = [
   {
     id: 83,
     category: "TKP",
-    questionText:
-      "Menyikapi tetangga yang masih suka membakar sampah padahal asapnya sangat mengganggu, Anda akan …",
+    content: [
+      {
+        type: "text",
+        value:
+          "Menyikapi tetangga yang masih suka membakar sampah padahal asapnya sangat mengganggu, Anda akan …",
+      },
+    ],
     options: [
       { label: "A", text: "Memberi peringatan langsung dengan tulisan larangan", points: 2 },
       { label: "B", text: "Menggunjingkan dengan tetangga lain", points: 1 },
@@ -1381,8 +1812,12 @@ export const questions: Question[] = [
   {
     id: 84,
     category: "TKP",
-    questionText:
-      "Tetangga berlatih gitar hingga larut malam dan suaranya mengganggu. Sikap Anda …",
+    content: [
+      {
+        type: "text",
+        value: "Tetangga berlatih gitar hingga larut malam dan suaranya mengganggu. Sikap Anda …",
+      },
+    ],
     options: [
       { label: "A", text: "Mengirim pesan WA bahwa Anda terganggu", points: 3 },
       {
@@ -1398,8 +1833,13 @@ export const questions: Question[] = [
   {
     id: 85,
     category: "TKP",
-    questionText:
-      "Tetangga mengadakan acara musik hingga larut malam dan mengganggu istirahat. Sikap Anda …",
+    content: [
+      {
+        type: "text",
+        value:
+          "Tetangga mengadakan acara musik hingga larut malam dan mengganggu istirahat. Sikap Anda …",
+      },
+    ],
     options: [
       { label: "A", text: "Melapor kepada ketua RT", points: 4 },
       { label: "B", text: "Mendatangi rumahnya dan meminta acara dibubarkan", points: 1 },
@@ -1411,8 +1851,13 @@ export const questions: Question[] = [
   {
     id: 86,
     category: "TKP",
-    questionText:
-      "Teman datang ingin curhat karena gagal tes CPNS, padahal Anda sedang sibuk belajar untuk tes besok. Sikap Anda …",
+    content: [
+      {
+        type: "text",
+        value:
+          "Teman datang ingin curhat karena gagal tes CPNS, padahal Anda sedang sibuk belajar untuk tes besok. Sikap Anda …",
+      },
+    ],
     options: [
       { label: "A", text: "Mengatakan lebih baik pulang karena mengganggu", points: 1 },
       { label: "B", text: "Mendengar curhatnya sekalian Anda bertanya soal soal tes", points: 4 },
@@ -1428,8 +1873,13 @@ export const questions: Question[] = [
   {
     id: 87,
     category: "TKP",
-    questionText:
-      "Teman yang gagal SKD datang curhat, namun sebentar lagi Anda akan kedatangan tamu kerabat jauh. Sikap Anda …",
+    content: [
+      {
+        type: "text",
+        value:
+          "Teman yang gagal SKD datang curhat, namun sebentar lagi Anda akan kedatangan tamu kerabat jauh. Sikap Anda …",
+      },
+    ],
     options: [
       { label: "A", text: "Menolak kedatangannya", points: 1 },
       { label: "B", text: "Memberi waktu curhat dan membatasi jika tamu sudah datang", points: 5 },
@@ -1441,8 +1891,13 @@ export const questions: Question[] = [
   {
     id: 88,
     category: "TKP",
-    questionText:
-      "Nenek melarang bepergian hari Jumat karena mitos keselamatan. Sikap Anda saat menginap di rumah beliau adalah …",
+    content: [
+      {
+        type: "text",
+        value:
+          "Nenek melarang bepergian hari Jumat karena mitos keselamatan. Sikap Anda saat menginap di rumah beliau adalah …",
+      },
+    ],
     options: [
       { label: "A", text: "Menolak dan mengatakan itu hanya mitos", points: 2 },
       {
@@ -1458,8 +1913,13 @@ export const questions: Question[] = [
   {
     id: 89,
     category: "TKP",
-    questionText:
-      "Anda warga baru dan diajak kerja bakti, namun sudah ada janji acara lain. Sikap Anda …",
+    content: [
+      {
+        type: "text",
+        value:
+          "Anda warga baru dan diajak kerja bakti, namun sudah ada janji acara lain. Sikap Anda …",
+      },
+    ],
     options: [
       { label: "A", text: "Datang sebentar untuk ramah tamah sebelum pergi", points: 4 },
       { label: "B", text: "Hanya mengirim makanan untuk warga", points: 2 },
@@ -1479,8 +1939,13 @@ export const questions: Question[] = [
   {
     id: 90,
     category: "TKP",
-    questionText:
-      "Gagasan Anda membuat 'Kampung Cyber' ditolak RT/RW karena keterbatasan dana. Padahal Anda punya sumber dana hibah. Sikap Anda …",
+    content: [
+      {
+        type: "text",
+        value:
+          "Gagasan Anda membuat 'Kampung Cyber' ditolak RT/RW karena keterbatasan dana. Padahal Anda punya sumber dana hibah. Sikap Anda …",
+      },
+    ],
     options: [
       { label: "A", text: "Memberi pengertian agar RT/RW memberi dukungan", points: 3 },
       { label: "B", text: "Mengajak tim memberi edukasi soal rencana ini", points: 4 },
@@ -1496,7 +1961,12 @@ export const questions: Question[] = [
   {
     id: 91,
     category: "TKP",
-    questionText: "Menyikapi informasi yang beredar di media sosial, Anda akan …",
+    content: [
+      {
+        type: "text",
+        value: "Menyikapi informasi yang beredar di media sosial, Anda akan …",
+      },
+    ],
     options: [
       { label: "A", text: "Tidak langsung percaya", points: 3 },
       { label: "B", text: "Mencari tahu dari berbagai sumber", points: 5 },
@@ -1508,8 +1978,12 @@ export const questions: Question[] = [
   {
     id: 92,
     category: "TKP",
-    questionText:
-      "Usulan program Kampung Cyber ditolak warga karena takut biaya besar. Sikap Anda …",
+    content: [
+      {
+        type: "text",
+        value: "Usulan program Kampung Cyber ditolak warga karena takut biaya besar. Sikap Anda …",
+      },
+    ],
     options: [
       { label: "A", text: "Mencoba menjelaskan detail biaya (hibah)", points: 5 },
       { label: "B", text: "Mengubah usulan menjadi uji coba lingkup kecil", points: 4 },
@@ -1521,8 +1995,13 @@ export const questions: Question[] = [
   {
     id: 93,
     category: "TKP",
-    questionText:
-      "Sebagai CS Online, ada nasabah ingin batal polis namun waktu Anda hanya 5 menit, sementara keluhannya banyak. Sikap Anda …",
+    content: [
+      {
+        type: "text",
+        value:
+          "Sebagai CS Online, ada nasabah ingin batal polis namun waktu Anda hanya 5 menit, sementara keluhannya banyak. Sikap Anda …",
+      },
+    ],
     options: [
       { label: "A", text: "Belajar berkomunikasi efektif", points: 3 },
       { label: "B", text: "Berkomunikasi efektif dan memecahkan masalah", points: 5 },
@@ -1534,7 +2013,12 @@ export const questions: Question[] = [
   {
     id: 94,
     category: "TKP",
-    questionText: "Nasabah mengeluh gagal m-banking. Setelah dicoba lama tetap gagal. Sikap Anda …",
+    content: [
+      {
+        type: "text",
+        value: "Nasabah mengeluh gagal m-banking. Setelah dicoba lama tetap gagal. Sikap Anda …",
+      },
+    ],
     options: [
       { label: "A", text: "Bertanya kepada rekan lain", points: 3 },
       { label: "B", text: "Meminta maaf karena belum bisa menyelesaikan", points: 1 },
@@ -1550,8 +2034,13 @@ export const questions: Question[] = [
   {
     id: 95,
     category: "TKP",
-    questionText:
-      "Ada kebijakan pemerintah di medsos yang dirasa memberatkan masyarakat. Sikap Anda …",
+    content: [
+      {
+        type: "text",
+        value:
+          "Ada kebijakan pemerintah di medsos yang dirasa memberatkan masyarakat. Sikap Anda …",
+      },
+    ],
     options: [
       { label: "A", text: "Tidak langsung percaya", points: 4 },
       { label: "B", text: "Mencari berita dari berbagai sumber", points: 5 },
@@ -1563,8 +2052,13 @@ export const questions: Question[] = [
   {
     id: 96,
     category: "TKP",
-    questionText:
-      "Usulan Anda ditolak atasan karena kurang pas dengan kondisi perusahaan. Sikap Anda …",
+    content: [
+      {
+        type: "text",
+        value:
+          "Usulan Anda ditolak atasan karena kurang pas dengan kondisi perusahaan. Sikap Anda …",
+      },
+    ],
     options: [
       { label: "A", text: "Menerima penolakan", points: 2 },
       { label: "B", text: "Memperbaiki ide dan mengajukan kembali", points: 4 },
@@ -1576,7 +2070,12 @@ export const questions: Question[] = [
   {
     id: 97,
     category: "TKP",
-    questionText: "Ada info hoax tersebar di media sosial. Sebagai warganet, sikap Anda …",
+    content: [
+      {
+        type: "text",
+        value: "Ada info hoax tersebar di media sosial. Sebagai warganet, sikap Anda …",
+      },
+    ],
     options: [
       { label: "A", text: "Tidak menyebarkannya", points: 5 },
       { label: "B", text: "Memblokir akun penyebarnya", points: 2 },
@@ -1588,7 +2087,12 @@ export const questions: Question[] = [
   {
     id: 98,
     category: "TKP",
-    questionText: "Jika komputer Anda mendadak mati, apa yang Anda lakukan?",
+    content: [
+      {
+        type: "text",
+        value: "Jika komputer Anda mendadak mati, apa yang Anda lakukan?",
+      },
+    ],
     options: [
       { label: "A", text: "Menelpon ahli IT", points: 2 },
       { label: "B", text: "Mencoba menyalakan, jika gagal minta bantuan teman", points: 4 },
@@ -1600,8 +2104,12 @@ export const questions: Question[] = [
   {
     id: 99,
     category: "TKP",
-    questionText:
-      "Sebagai panitia gathering kantor, menyikapi penentuan tempat wisata, Anda akan …",
+    content: [
+      {
+        type: "text",
+        value: "Sebagai panitia gathering kantor, menyikapi penentuan tempat wisata, Anda akan …",
+      },
+    ],
     options: [
       { label: "A", text: "Menanyakan tempat bagus menurut teman", points: 3 },
       { label: "B", text: "Tidak meminta pendapat teman", points: 1 },
@@ -1613,8 +2121,13 @@ export const questions: Question[] = [
   {
     id: 100,
     category: "TKP",
-    questionText:
-      "Toko kain keluarga krisis karena pandemi dan mau dijual. Sebagai pemegang saham, Anda …",
+    content: [
+      {
+        type: "text",
+        value:
+          "Toko kain keluarga krisis karena pandemi dan mau dijual. Sebagai pemegang saham, Anda …",
+      },
+    ],
     options: [
       { label: "A", text: "Mendukung penjualan agar tidak rugi lebih besar", points: 2 },
       { label: "B", text: "Berusaha mencari cara mempertahankan operasional", points: 5 },
@@ -1626,7 +2139,12 @@ export const questions: Question[] = [
   {
     id: 101,
     category: "TKP",
-    questionText: "Dapat beasiswa S2 luar negeri namun istri sedang hamil. Sikap Anda …",
+    content: [
+      {
+        type: "text",
+        value: "Dapat beasiswa S2 luar negeri namun istri sedang hamil. Sikap Anda …",
+      },
+    ],
     options: [
       { label: "A", text: "Menolak beasiswa", points: 1 },
       { label: "B", text: "Menunggu kelahiran dan merelakan beasiswa tahun ini", points: 2 },
@@ -1638,7 +2156,12 @@ export const questions: Question[] = [
   {
     id: 102,
     category: "TKP",
-    questionText: "Kantor krisis dan ada potensi PHK massal. Sebagai pimpinan, Anda …",
+    content: [
+      {
+        type: "text",
+        value: "Kantor krisis dan ada potensi PHK massal. Sebagai pimpinan, Anda …",
+      },
+    ],
     options: [
       { label: "A", text: "Merasa tertekan dan stres", points: 1 },
       { label: "B", text: "Mendiskusikan dengan dewan direksi", points: 4 },
@@ -1650,7 +2173,12 @@ export const questions: Question[] = [
   {
     id: 103,
     category: "TKP",
-    questionText: "Diminta menjaga rahasia perusahaan, sikap Anda adalah …",
+    content: [
+      {
+        type: "text",
+        value: "Diminta menjaga rahasia perusahaan, sikap Anda adalah …",
+      },
+    ],
     options: [
       { label: "A", text: "Tidak akan membocorkannya", points: 4 },
       { label: "B", text: "Menghindar jika ada yang mencoba mengorek info", points: 3 },
@@ -1662,7 +2190,12 @@ export const questions: Question[] = [
   {
     id: 104,
     category: "TKP",
-    questionText: "Mau rapat penting tapi ban motor bocor di jalan. Sikap Anda …",
+    content: [
+      {
+        type: "text",
+        value: "Mau rapat penting tapi ban motor bocor di jalan. Sikap Anda …",
+      },
+    ],
     options: [
       { label: "A", text: "Mencari kendaraan online", points: 5 },
       { label: "B", text: "Menunggu angkutan umum", points: 2 },
@@ -1674,7 +2207,12 @@ export const questions: Question[] = [
   {
     id: 105,
     category: "TKP",
-    questionText: "Mahasiswa di kampus Anda ditangkap karena terorisme. Sebagai Dekan, Anda …",
+    content: [
+      {
+        type: "text",
+        value: "Mahasiswa di kampus Anda ditangkap karena terorisme. Sebagai Dekan, Anda …",
+      },
+    ],
     options: [
       { label: "A", text: "Mencari kebenaran, jika benar maka dikeluarkan", points: 4 },
       { label: "B", text: "Melarang keras aktivitas kampus yang mengarah terorisme", points: 5 },
@@ -1686,7 +2224,12 @@ export const questions: Question[] = [
   {
     id: 106,
     category: "TKP",
-    questionText: "Polisi mencurigai teroris di lingkungan Anda. Sebagai Ketua RT, Anda akan …",
+    content: [
+      {
+        type: "text",
+        value: "Polisi mencurigai teroris di lingkungan Anda. Sebagai Ketua RT, Anda akan …",
+      },
+    ],
     options: [
       { label: "A", text: "Memberi keterangan detail membantu polisi", points: 4 },
       { label: "B", text: "Memberi keterangan jujur untuk mempermudah penyelidikan", points: 5 },
@@ -1698,7 +2241,12 @@ export const questions: Question[] = [
   {
     id: 107,
     category: "TKP",
-    questionText: "Terhadap ujaran kebencian kepada pemerintah di medsos, sikap Anda …",
+    content: [
+      {
+        type: "text",
+        value: "Terhadap ujaran kebencian kepada pemerintah di medsos, sikap Anda …",
+      },
+    ],
     options: [
       { label: "A", text: "Tidak akan mengikuti", points: 3 },
       { label: "B", text: "Tidak akan percaya", points: 4 },
@@ -1710,7 +2258,12 @@ export const questions: Question[] = [
   {
     id: 108,
     category: "TKP",
-    questionText: "Seseorang menistakan agama Anda melalui konten fitnah. Sikap Anda …",
+    content: [
+      {
+        type: "text",
+        value: "Seseorang menistakan agama Anda melalui konten fitnah. Sikap Anda …",
+      },
+    ],
     options: [
       { label: "A", text: "Mencari dukungan untuk mengecam orang tersebut", points: 3 },
       { label: "B", text: "Melapor kepada polisi karena tindakannya meresahkan", points: 5 },
@@ -1722,7 +2275,12 @@ export const questions: Question[] = [
   {
     id: 109,
     category: "TKP",
-    questionText: "Kebijakan pemerintah dirasa tidak pro rakyat. Sikap Anda …",
+    content: [
+      {
+        type: "text",
+        value: "Kebijakan pemerintah dirasa tidak pro rakyat. Sikap Anda …",
+      },
+    ],
     options: [
       { label: "A", text: "Memilih sabar", points: 4 },
       { label: "B", text: "Mengecam dengan petisi online", points: 1 },
@@ -1734,7 +2292,12 @@ export const questions: Question[] = [
   {
     id: 110,
     category: "TKP",
-    questionText: "Teman menjelek-jelekkan pemerintah di media sosial. Sikap Anda …",
+    content: [
+      {
+        type: "text",
+        value: "Teman menjelek-jelekkan pemerintah di media sosial. Sikap Anda …",
+      },
+    ],
     options: [
       { label: "A", text: "Mengingatkan secara pribadi", points: 5 },
       { label: "B", text: "Mengingatkan di depan umum", points: 2 },
