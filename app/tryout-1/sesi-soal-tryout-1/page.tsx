@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import { Clock, ChevronLeft, ChevronRight, Flag, Send, FileText, Menu, X } from "lucide-react";
 import { questions, Question } from "@/lib/questions";
 
+// --- PERUBAHAN DI SINI: Import Library Math Rendering ---
 import ReactMarkdown from "react-markdown";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
@@ -296,14 +297,14 @@ export default function SesiSoalTryout1() {
                 {currentIdx > 0 && (
                   <button
                     onClick={() => navigateSoal(-1)}
-                    className="flex-1 md:flex-none flex items-center justify-center gap-2 bg-white border border-slate-200 text-slate-600 px-4 py-3 rounded-xl font-bold text-sm"
+                    className="flex-1 md:flex-none flex items-center justify-center gap-2 bg-white hover:bg-slate-200 border border-slate-200 text-slate-600 px-4 py-3 rounded-xl font-bold text-sm"
                   >
                     <ChevronLeft size={18} /> <span>Sebelumnya</span>
                   </button>
                 )}
                 <button
                   onClick={toggleRagu}
-                  className={`flex-1 md:flex-none flex items-center justify-center gap-2 px-4 py-3 rounded-xl font-bold text-sm border-2 ${answers[currentIdx + 1]?.isRagu ? "bg-amber-500 border-amber-500 text-white" : "bg-white border-amber-500 text-amber-500"}`}
+                  className={`flex-1 md:flex-none flex items-center justify-center gap-2 px-4 py-3 rounded-xl font-bold text-sm border-2 ${answers[currentIdx + 1]?.isRagu ? "bg-amber-500 border-amber-500 text-white" : "bg-white hover:bg-amber-100 border-amber-500 text-amber-500"}`}
                 >
                   <Flag size={18} fill={answers[currentIdx + 1]?.isRagu ? "white" : "none"} />{" "}
                   Ragu-ragu
@@ -314,7 +315,7 @@ export default function SesiSoalTryout1() {
                 {currentIdx < TOTAL_SOAL - 1 ? (
                   <button
                     onClick={() => navigateSoal(1)}
-                    className="w-full md:w-auto flex items-center justify-center gap-2 bg-indigo-600 text-white px-8 py-3 rounded-xl font-bold shadow-lg shadow-indigo-100"
+                    className="w-full md:w-auto flex items-center justify-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3 rounded-xl font-bold shadow-lg shadow-indigo-100"
                   >
                     Selanjutnya <ChevronRight size={18} />
                   </button>
