@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import {
@@ -12,6 +12,7 @@ import {
   BookOpenCheck,
   AlertCircle,
 } from "lucide-react";
+import { supabase } from "@/lib/supabase";
 
 const PassingGradeChart = ({
   label,
@@ -75,6 +76,40 @@ export default function Tryout1() {
 
   // Status dummy: ubah ke 'true' jika ingin melihat tombol "Lihat Pembahasan"
   const [isCompleted, setIsCompleted] = useState(false);
+  {
+    /* TAMBAHKAN: State untuk menampung data hasil jika sudah pernah kerja */
+  }
+  const [hasResult, setHasResult] = useState(false);
+
+  {
+    /* TAMBAHKAN: Ambil status pengerjaan dari database */
+  }
+  useEffect(() => {
+    const checkUserResult = async () => {
+      const sessionStr = localStorage.getItem("user_session");
+      if (!sessionStr) return;
+
+      const session = JSON.parse(sessionStr);
+      const { data, error } = await supabase
+        .from("tryout_results")
+        .select("*")
+        .eq("user_id", session.id)
+        .eq("tryout_id", 1)
+        .order("created_at", { ascending: false }) // Ambil yang paling baru dibuat
+        .limit(1); // Batasi hanya 1 data array yang ditarik
+
+      if (data && data.length > 0) {
+        const latestResult = data[0]; // Dapatkan objek baris pertama
+        setHasResult(true);
+        setIsCompleted(true);
+
+        // Sinkronkan ke local storage agar jika tombol diklik data sudah siap pakai
+        localStorage.setItem("last_to_result", JSON.stringify(latestResult));
+      }
+    };
+
+    checkUserResult();
+  }, []);
 
   return (
     <main className="min-h-screen bg-slate-50 pb-20">
@@ -172,13 +207,15 @@ export default function Tryout1() {
 
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              {isCompleted && (
+              {/* TAMBAHKAN/PERUBAHAN: Tombol Tampil di samping tombol utama jika user sudah pernah kerja */}
+
+              {hasResult && (
                 <button
-                  onClick={() => router.push("/pembahasan-soal")}
-                  className="flex-1 flex items-center justify-center gap-2 bg-emerald-100 text-emerald-700 hover:bg-emerald-600 hover:text-white font-black py-5 px-8 rounded-2xl transition-all duration-300 border-2 border-emerald-200 hover:shadow-xl hover:shadow-emerald-200"
+                  onClick={() => router.push("/tryout-1/hasil-tryout-1")}
+                  className="flex-1 flex items-center justify-center gap-3 bg-emerald-100 text-emerald-700 hover:bg-emerald-600 hover:text-white font-black py-5 px-8 rounded-2xl transition-all duration-300 border-2 border-emerald-200 hover:shadow-xl hover:shadow-emerald-200 hover:-translate-y-1 "
                 >
                   <BookOpenCheck size={24} />
-                  LIHAT PEMBAHASAN
+                  Lihat Hasil Tryout
                 </button>
               )}
 

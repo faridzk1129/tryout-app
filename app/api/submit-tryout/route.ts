@@ -6,6 +6,14 @@ export async function POST(request: Request) {
     const body = await request.json();
     const { userId, tryoutId, scoreTwk, scoreTiu, scoreTkp, totalScore, answers } = body;
 
+    {
+      /* PERUBAHAN: Hapus data tryout lama untuk id ini agar hanya tersimpan 1 data terakhir */
+    }
+    await supabase.from("tryout_results").delete().eq("user_id", userId).eq("tryout_id", tryoutId);
+
+    {
+      /* Masukkan data pengerjaan yang paling baru */
+    }
     const { data, error } = await supabase
       .from("tryout_results")
       .insert([

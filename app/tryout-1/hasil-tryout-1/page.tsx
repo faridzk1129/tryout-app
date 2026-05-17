@@ -50,7 +50,7 @@ const SubTestBar = ({
           {/* Bulatan Merah di atas garis */}
           <div className="absolute -top-1 -left-[5px] w-3 h-3 bg-red-500 rounded-full border-2 border-white"></div>
 
-          {/* TEKS PASSING GRADE: Diletakkan di dalam div yang sama agar ikut bergeser */}
+          {/* TEKS PASSING GRADE */}
           <div className="absolute top-5 left-1/2 -translate-x-1/2 whitespace-nowrap text-center">
             <p className="text-[10px] font-black text-indigo-500 uppercase tracking-tighter leading-none">
               Passing Grade: {pg}
@@ -67,14 +67,12 @@ const SubTestBar = ({
     </div>
   );
 };
+
 export default function HasilTryout1() {
   const router = useRouter();
   const [results, setResults] = useState<any>(null);
 
   useEffect(() => {
-    {
-      /* PERUBAHAN: Proteksi Halaman */
-    }
     const session = localStorage.getItem("user_session");
     if (!session) {
       router.push("/");
@@ -91,15 +89,20 @@ export default function HasilTryout1() {
 
   if (!results) return null;
 
-  {
-    /* LOGIC: Circle Chart SVG */
-  }
   const totalMax = 550;
   const radius = 70;
   const circumference = 2 * Math.PI * radius;
-  const offset = circumference - (results.totalScore / totalMax) * circumference;
 
-  const isLolosSemua = results.scoreTwk >= 65 && results.scoreTiu >= 80 && results.scoreTkp >= 166;
+  // =====================================================================
+  // /* PERBAIKAN 1: Mendukung dua format sekaligus (CamelCase & SnakeCase) */
+  // =====================================================================
+  const safeTotalScore = Number(results.totalScore ?? results.total_score) || 0;
+  const scoreTwk = Number(results.scoreTwk ?? results.score_twk) || 0;
+  const scoreTiu = Number(results.scoreTiu ?? results.score_tiu) || 0;
+  const scoreTkp = Number(results.scoreTkp ?? results.score_tkp) || 0;
+
+  const offset = circumference - (safeTotalScore / totalMax) * circumference;
+  const isLolosSemua = scoreTwk >= 65 && scoreTiu >= 80 && scoreTkp >= 166;
 
   return (
     <main className="min-h-screen bg-slate-50 pb-20">
@@ -136,7 +139,8 @@ export default function HasilTryout1() {
                 />
               </svg>
               <div className="absolute text-center">
-                <p className="text-4xl font-black text-slate-800">{results.totalScore}</p>
+                {/* PERBAIKAN 2: Gunakan safeTotalScore */}
+                <p className="text-4xl font-black text-slate-800">{safeTotalScore}</p>
                 <p className="text-[10px] font-bold text-slate-400 uppercase tracking-tighter">
                   Skor Total
                 </p>
@@ -164,22 +168,15 @@ export default function HasilTryout1() {
             </div>
           </div>
 
+          {/* ===================================================================== */}
+          {/* PERBAIKAN 3: Gunakan scoreTwk, scoreTiu, scoreTkp yang aman di bawan ini */}
+          {/* ===================================================================== */}
           <div className="space-y-2">
-            <SubTestBar
-              label="TWK (Tes Wawasan Kebangsaan)"
-              score={results.scoreTwk}
-              pg={65}
-              max={150}
-            />
-            <SubTestBar
-              label="TIU (Tes Inteligensi Umum)"
-              score={results.scoreTiu}
-              pg={80}
-              max={175}
-            />
+            <SubTestBar label="TWK (Tes Wawasan Kebangsaan)" score={scoreTwk} pg={65} max={150} />
+            <SubTestBar label="TIU (Tes Inteligensi Umum)" score={scoreTiu} pg={80} max={175} />
             <SubTestBar
               label="TKP (Tes Karakteristik Pribadi)"
-              score={results.scoreTkp}
+              score={scoreTkp}
               pg={166}
               max={225}
             />
@@ -188,11 +185,15 @@ export default function HasilTryout1() {
           <div className="mt-12 flex flex-col sm:flex-row gap-4">
             <button
               onClick={() => router.push("/beranda")}
-              className="flex-1 bg-slate-100 text-slate-600 font-bold py-5 px-8 rounded-2xl hover:bg-slate-200 flex items-center justify-center gap-2"
+              className="flex-1 bg-slate-100 text-slate-600 font-bold py-5 px-8 rounded-2xl hover:bg-slate-200 flex items-center justify-center gap-2 hover:-translate-y-1 transition-all duration-300 "
             >
               <ArrowLeft size={20} /> Kembali ke Beranda
             </button>
-            <button className="flex-[2] bg-indigo-600 text-white font-bold py-5 px-8 rounded-2xl hover:bg-indigo-700 shadow-xl shadow-indigo-200 flex items-center justify-center gap-2">
+
+            <button
+              onClick={() => router.push("/tryout-1/pembahasan-soal-tryout-1")}
+              className="flex-[2] bg-indigo-600 text-white font-bold py-5 px-8 rounded-2xl hover:bg-indigo-700 shadow-xl shadow-indigo-200 flex items-center justify-center gap-2 hover:-translate-y-1 transition-all duration-300 "
+            >
               <BookOpenCheck size={20} /> Lihat Pembahasan Soal
             </button>
           </div>
