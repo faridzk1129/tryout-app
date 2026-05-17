@@ -43,6 +43,7 @@ export const questions: Question[] = [
       { label: "E", text: "Melakukan modifikasi batik tulis dengan batik cap", points: 5 },
     ],
   },
+  
   {
     id: 2,
     category: "TWK",

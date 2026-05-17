@@ -21,12 +21,12 @@ const SubTestBar = ({
   return (
     <div className="mb-8">
       <div className="flex justify-between items-end mb-2">
-        <div>
-          <span className="text-lg font-black text-slate-800">{label}</span>
+        <div className="flex flex-col md:flex-row items-center gap-2 gap-y-1">
+          <h1 className="text-md md:text-lg font-black text-slate-800">{label}</h1>
           <span
-            className={`ml-3 text-xs font-bold px-2 py-0.5 rounded-full ${isPassed ? "bg-green-100 text-green-600" : "bg-red-100 text-red-600"}`}
+            className={`text-[10px] self-start md:self-center text-center w-auto font-bold px-2 py-0.5 rounded-full ${isPassed ? "bg-green-100 text-green-600" : "bg-red-100 text-red-600"}`}
           >
-            {isPassed ? "LULUS PASSING GRADE" : "TIDAK LULUS"}
+            {isPassed ? "LULUS" : "TIDAK LULUS"}
           </span>
         </div>
         <div className="text-right">
@@ -52,7 +52,7 @@ const SubTestBar = ({
 
           {/* TEKS PASSING GRADE: Diletakkan di dalam div yang sama agar ikut bergeser */}
           <div className="absolute top-5 left-1/2 -translate-x-1/2 whitespace-nowrap text-center">
-            <p className="text-[9px] font-black text-red-500 uppercase tracking-tighter leading-none">
+            <p className="text-[10px] font-black text-indigo-500 uppercase tracking-tighter leading-none">
               Passing Grade: {pg}
             </p>
           </div>
@@ -67,7 +67,7 @@ const SubTestBar = ({
     </div>
   );
 };
-export default function HasilTryout() {
+export default function HasilTryout1() {
   const router = useRouter();
   const [results, setResults] = useState<any>(null);
 
@@ -166,19 +166,19 @@ export default function HasilTryout() {
 
           <div className="space-y-2">
             <SubTestBar
-              label="TWK (Wawasan Kebangsaan)"
+              label="TWK (Tes Wawasan Kebangsaan)"
               score={results.scoreTwk}
               pg={65}
               max={150}
             />
             <SubTestBar
-              label="TIU (Intelegensia Umum)"
+              label="TIU (Tes Inteligensi Umum)"
               score={results.scoreTiu}
               pg={80}
               max={175}
             />
             <SubTestBar
-              label="TKP (Karakteristik Pribadi)"
+              label="TKP (Tes Karakteristik Pribadi)"
               score={results.scoreTkp}
               pg={166}
               max={225}
