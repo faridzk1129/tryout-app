@@ -74,16 +74,9 @@ const PassingGradeChart = ({
 export default function Tryout1() {
   const router = useRouter();
 
-  // Status dummy: ubah ke 'true' jika ingin melihat tombol "Lihat Pembahasan"
   const [isCompleted, setIsCompleted] = useState(false);
-  {
-    /* TAMBAHKAN: State untuk menampung data hasil jika sudah pernah kerja */
-  }
   const [hasResult, setHasResult] = useState(false);
 
-  {
-    /* TAMBAHKAN: Ambil status pengerjaan dari database */
-  }
   useEffect(() => {
     const checkUserResult = async () => {
       const sessionStr = localStorage.getItem("user_session");
@@ -95,11 +88,11 @@ export default function Tryout1() {
         .select("*")
         .eq("user_id", session.id)
         .eq("tryout_id", 1)
-        .order("created_at", { ascending: false }) // Ambil yang paling baru dibuat
+        .order("created_at", { ascending: false })
         .limit(1); // Batasi hanya 1 data array yang ditarik
 
       if (data && data.length > 0) {
-        const latestResult = data[0]; // Dapatkan objek baris pertama
+        const latestResult = data[0];
         setHasResult(true);
         setIsCompleted(true);
 
@@ -212,7 +205,7 @@ export default function Tryout1() {
               {hasResult && (
                 <button
                   onClick={() => router.push("/tryout-1/hasil-tryout-1")}
-                  className="flex-1 flex items-center justify-center gap-3 bg-emerald-100 text-emerald-700 hover:bg-emerald-600 hover:text-white font-black py-5 px-8 rounded-2xl transition-all duration-300 border-2 border-emerald-200 hover:shadow-xl hover:shadow-emerald-200 hover:-translate-y-1 "
+                  className="flex-1 bg-slate-100 text-slate-600 font-bold py-5 px-8 rounded-2xl hover:bg-slate-200 flex items-center justify-center gap-2 hover:-translate-y-1 transition-all duration-300"
                 >
                   <BookOpenCheck size={24} />
                   Lihat Hasil Tryout
@@ -223,7 +216,7 @@ export default function Tryout1() {
                 onClick={() => router.push("/tryout-1/sesi-soal-tryout-1")}
                 className="flex-[2] flex items-center justify-center gap-3 bg-gradient-to-r from-indigo-600 to-blue-700 hover:from-indigo-700 hover:to-blue-800 text-white font-black py-5 px-8 rounded-2xl transition-all duration-300 shadow-xl shadow-indigo-200 hover:shadow-2xl hover:shadow-indigo-300 hover:-translate-y-1"
               >
-                Mulai Tryout Sekarang
+                Mulai Tryout
               </button>
             </div>
           </div>

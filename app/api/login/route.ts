@@ -23,7 +23,6 @@ export async function POST(request: Request) {
     return NextResponse.json(
       {
         message: "Login berhasil",
-        // {/* PERUBAHAN: Kirim data user lengkap ke frontend */}
         user: {
           id: user.id,
           username: user.username,
