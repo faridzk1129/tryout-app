@@ -66,7 +66,7 @@ export default function PembahasanSoalTryout1() {
   return (
     <main className="min-h-screen bg-slate-50 flex flex-col overflow-x-hidden">
       {/* --- HEADER (TIDAK MEMILIKI TIMER) --- */}
-      <header className="bg-white border-b border-slate-200 px-4 md:px-6 py-4 sticky top-0 z-50 flex justify-between items-center shadow-sm">
+      <header className="bg-white border-b border-slate-200 px-4 md:px-6 py-4 fixed top-0 left-0 w-full z-50 flex justify-between items-center shadow-sm h-18">
         <div className="flex items-center gap-2 md:gap-3">
           <div className="bg-emerald-600 p-2 rounded-lg text-white">
             <BookOpenCheck size={20} />
@@ -87,7 +87,7 @@ export default function PembahasanSoalTryout1() {
         </button>
       </header>
 
-      <div className="flex flex-1 relative">
+      <div className="flex flex-1 relative mt-18">
         {/* --- KONTEN UTAMA SOAL & JAWABAN (KIRI) --- */}
         <div className="flex-1 overflow-y-auto p-4 md:p-8">
           <div className="max-w-3xl mx-auto">
@@ -133,7 +133,7 @@ export default function PembahasanSoalTryout1() {
                       >
                         {opt.label}
                       </div>
-                      <div className="flex flex-col gap-2 w-full overflow-hidden mt-[2px]">
+                      <div className="space-y-4">
                         {opt.text && !opt.image && (
                           <div className="text-sm md:text-base font-medium">
                             <ReactMarkdown
@@ -148,7 +148,7 @@ export default function PembahasanSoalTryout1() {
                           <img
                             src={opt.image}
                             alt={`Opsi ${opt.label}`}
-                            className="md:h-28 h-24 max-w-full object-contain rounded-lg border border-slate-200 bg-white"
+                            className="md:h-28 h-24 max-w-full object-contain rounded-lg border border-slate-200"
                           />
                         )}
                         {isSelectedByUser && (
@@ -210,9 +210,6 @@ export default function PembahasanSoalTryout1() {
               </div>
 
               <div>
-                {/* =============================================================== */}
-                {/* {/* PERUBAHAN: Tombol di akhir bernilai "Selesai" mengarah ke hasil */}
-                {/* =============================================================== */}
                 {currentIdx < TOTAL_SOAL - 1 ? (
                   <button
                     onClick={() => navigateSoal(1)}
@@ -242,7 +239,7 @@ export default function PembahasanSoalTryout1() {
         )}
 
         <aside
-          className={`fixed lg:sticky top-0 right-0 lg:top-[73px] z-[70] lg:z-40 w-80 h-full lg:h-[calc(100vh-73px)] bg-white border-l border-b border-slate-200  flex flex-col  transition-transform duration-300 ease-in-out ${isSidebarOpen ? "translate-x-0" : "translate-x-full lg:translate-x-0"}`}
+          className={`rounded-lg rounded-r-none  fixed lg:sticky top-0 right-0 lg:top-[73px] z-[70] lg:z-40 w-80 h-full lg:h-[calc(100vh-73px)] bg-white border border-slate-200   flex flex-col  transition-transform duration-300 ease-in-out ${isSidebarOpen ? "translate-x-0" : "translate-x-full lg:translate-x-0"}`}
         >
           <div className="p-6 border-b border-slate-100 flex justify-between items-center">
             <h2 className="font-black text-slate-800">Navigasi Review</h2>
@@ -261,19 +258,26 @@ export default function PembahasanSoalTryout1() {
                 const ans = answers[qNum];
                 const isCurrent = currentIdx === i;
 
-                // =========================================================================================
-                // /* PERUBAHAN LOGIC WARNA: Nilai sempurna (5) berwarna Hijau Muda, selain nilai 5 warna Merah */
-                // =========================================================================================
-                let bgColor = "bg-red-500 text-white";
-                if (ans?.points === 5) {
-                  bgColor = "bg-green-400 text-slate-900"; // Mendapatkan nilai maksimal 5
-                } else if (!ans?.selected) {
-                  bgColor = "bg-slate-300 text-slate-600"; // Jika tidak dijawab sama sekali
+                // LOGIKA WARNA PEMBAHASAN:
+                // 1. Default: Belum dijawab (Abu-abu)
+                let bgColor = "bg-slate-200 text-slate-500";
+
+                // 2. Jika sudah dijawab
+                if (ans?.selected) {
+                  // Jika jawaban benar (poin maksimal, misal 5)
+                  if (ans.points === 5) {
+                    bgColor = "bg-emerald-500 text-white";
+                  }
+                  // Jika jawaban salah (poin < 5)
+                  else {
+                    bgColor = "bg-red-500 text-white";
+                  }
                 }
 
-                if (isCurrent) {
-                  bgColor = "ring-4 ring-indigo-600 ring-inset bg-indigo-100 text-indigo-900"; // Penanda posisi aktif saat ini
-                }
+                // 3. Highlight Soal Aktif (Override semua warna di atas dengan Ring & Warna Indigo)
+                const activeStyles = isCurrent
+                  ? "ring-4 ring-indigo-600 ring-inset text-indigo-900"
+                  : "";
 
                 return (
                   <button
@@ -282,7 +286,8 @@ export default function PembahasanSoalTryout1() {
                       window.location.hash = `#${qNum}`;
                       setIsSidebarOpen(false);
                     }}
-                    className={`aspect-square rounded-xl font-bold text-xs transition-all flex items-center justify-center ${bgColor}`}
+                    // Gabungkan bgColor dengan activeStyles
+                    className={`aspect-square rounded-xl font-bold text-xs transition-all flex items-center justify-center ${bgColor} ${activeStyles}`}
                   >
                     {qNum}
                   </button>
@@ -291,10 +296,7 @@ export default function PembahasanSoalTryout1() {
             </div>
           </div>
 
-          <div className="p-4 bg-slate-50 mt-auto">
-            {/* ============================================== */}
-            {/* {/* PERUBAHAN: Tombol Navigasi Bawah "Selesai" */}
-            {/* ============================================== */}
+          <div className="p-4 bg-slate-50 mt-auto rounded-lg">
             <button
               onClick={() => router.push("/tryout-1/hasil-tryout-1")}
               className="w-full bg-white text-emerald-600 border border-emerald-200 py-3 rounded-xl text-sm font-black hover:bg-emerald-600 hover:text-white transition-all text-center block"

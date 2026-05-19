@@ -21,7 +21,7 @@ export interface ExplanationContent {
 export interface Question {
   id: number;
   category: Category;
-  content: QuestionContent[]; 
+  content: QuestionContent[];
   options: Option[];
 
   explanation?: ExplanationContent[];
@@ -829,7 +829,7 @@ export const questions: Question[] = [
       {
         type: "text",
         value:
-          "**Jawaban: E**\n\nPenggunaan kalimat baku yang tepat ditunjukkan pada kalimat….\n\n -> Para peserta rapat dipersilahkan masuk ke dalam ruangan.",
+          "**Jawaban: E**\n\nPenggunaan kalimat baku yang tepat ditunjukkan pada kalimat…. \n\n -> Mari kita semua saling membantu membersihkan halaman sekolah \n\n -> Meskipun sakit, Ari tetap belajar dengan giat \n\n -> Saya mandi sebelum sarapan \n\n -> Para pejabat negara seharusnya dapat hidup sederhana  \n\n -> Para peserta rapat dipersilahkan masuk ke dalam ruangan.",
       },
     ],
   },
@@ -869,7 +869,7 @@ export const questions: Question[] = [
       {
         type: "text",
         value:
-          "**Jawaban: A**\n\nPenggunaan kalimat baku yang tepat ditunjukkan pada kalimat….\n\n -> Sumilir saat ini menjadi salah satu desa wisata di Kabupaten Purbalingga yang patut dikunjungi.",
+          "**Jawaban: A**\n\nPenggunaan kalimat baku yang tepat ditunjukkan pada kalimat….\n\n -> Sumilir saat ini menjadi salah satu desa wisata di Kabupaten Purbalingga yang patut dikunjungi. \n\n -> Rencana ini masih tentatif sekali, masih jauh dari kata pasti. \n\n -> Queen harus mendapatkan pengawasan ekstra ketika di rumah sendirian. \n\n -> Nana mengambil jurusan Teknik Sipil di Universitas Sebelas Maret. \n\n -> Komoditi Desa Pratin adalah sayur mayur.",
       },
     ],
   },
