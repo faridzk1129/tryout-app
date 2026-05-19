@@ -1197,6 +1197,10 @@ Siapa yang mendapatkan medali emas?`,
         type: "text",
         value: "**Jawaban: A**",
       },
+      {
+        type: "image",
+        value: "/tryout-1/explanation-39.png",
+      },
     ],
   },
   {
@@ -1221,6 +1225,10 @@ Siapa yang mendapatkan medali emas?`,
         type: "text",
         value: "**Jawaban: D**",
       },
+      {
+        type: "image",
+        value: "/tryout-1/explanation-39.png",
+      },
     ],
   },
   {
@@ -1243,6 +1251,10 @@ Siapa yang mendapatkan medali emas?`,
       {
         type: "text",
         value: "**Jawaban: C**",
+      },
+      {
+        type: "image",
+        value: "/tryout-1/explanation-39.png",
       },
     ],
   },
@@ -1267,6 +1279,10 @@ Siapa yang mendapatkan medali emas?`,
         type: "text",
         value: "**Jawaban: B**",
       },
+      {
+        type: "image",
+        value: "/tryout-1/explanation-39.png",
+      },
     ],
   },
   {
@@ -1289,6 +1305,10 @@ Siapa yang mendapatkan medali emas?`,
       {
         type: "text",
         value: "**Jawaban: A**",
+      },
+      {
+        type: "image",
+        value: "/tryout-1/explanation-39.png",
       },
     ],
   },
@@ -1393,8 +1413,11 @@ Siapa yang mendapatkan medali emas?`,
     explanation: [
       {
         type: "text",
-        value:
-          "**Jawaban: C**\n\n**Premis 1** &nbsp;&nbsp;&nbsp;&nbsp;: Semua peserta CPNS wajib menggunakan kemeja putih dan celana hitam.\n**Premis 2** &nbsp;&nbsp;&nbsp;&nbsp;: Aldi adalah peserta CPNS.\n**Kesimpulan** : Aldi menggunakan kemeja putih dan celana hitam.",
+        value: `**Jawaban: C**
+
+* **Premis 1**: Semua peserta CPNS wajib menggunakan kemeja putih dan celana hitam.
+* **Premis 2**: Aldi adalah peserta CPNS.
+* **Kesimpulan**: **Aldi menggunakan kemeja putih dan celana hitam.**`,
       },
     ],
   },
@@ -1418,8 +1441,11 @@ Siapa yang mendapatkan medali emas?`,
     explanation: [
       {
         type: "text",
-        value:
-          "**Jawaban: B**\n\n **Premis 1** &nbsp;&nbsp;&nbsp;&nbsp;: Jika rajin belajar, Adi dapat diterima di sekolah kedinasan favorit. \n**Premis 2** &nbsp;&nbsp;&nbsp;&nbsp;: Adi tidak diterima di sekolah kedinasan.\n**Kesimpulan** : Adi tidak rajin belajar.",
+        value: `**Jawaban: B**
+
+* **Premis 1**: Jika rajin belajar, Adi dapat diterima di sekolah kedinasan favorit.
+* **Premis 2**: Adi tidak diterima di sekolah kedinasan favorit.
+* **Kesimpulan**: **Adi tidak rajin belajar.**`,
       },
     ],
   },
@@ -1443,8 +1469,11 @@ Siapa yang mendapatkan medali emas?`,
     explanation: [
       {
         type: "text",
-        value:
-          "**Jawaban: D**\n\n **Premis 1** &nbsp;&nbsp;&nbsp;&nbsp;: Tidak semua pengusaha kaya. \n**Premis 2** &nbsp;&nbsp;&nbsp;&nbsp;: Beberapa peserta seleksi adalah pengusaha.\n**Kesimpulan** : Beberapa peserta seleksi tidak kaya.",
+        value: `**Jawaban: D**
+
+* **Premis 1**: Tidak semua pengusaha kaya.
+* **Premis 2**: Beberapa peserta seleksi adalah pengusaha.
+* **Kesimpulan**: **Beberapa peserta seleksi tidak kaya.**`,
       },
     ],
   },
@@ -1468,8 +1497,11 @@ Siapa yang mendapatkan medali emas?`,
     explanation: [
       {
         type: "text",
-        value:
-          "**Jawaban: B**\n\n **Premis 1** &nbsp;&nbsp;&nbsp;&nbsp;: Semua siswa kelas 9 SMP adalah murid yang pintar. \n**Premis 2** &nbsp;&nbsp;&nbsp;&nbsp;: Agung bukan siswa kelas 9 SMP.\n**Kesimpulan** : Agung adalah murid yang tidak pintar.",
+        value: `**Jawaban: B**
+
+* **Premis 1**: Semua siswa kelas 9 SMP adalah murid yang pintar.
+* **Premis 2**: Agung bukan siswa kelas 9 SMP.
+* **Kesimpulan**: **Agung adalah murid yang tidak pintar.**`,
       },
     ],
   },
@@ -1493,8 +1525,11 @@ Siapa yang mendapatkan medali emas?`,
     explanation: [
       {
         type: "text",
-        value:
-          "**Jawaban: D**\n\n **Premis 1** &nbsp;&nbsp;&nbsp;&nbsp;: Semua peserta CPNS tahun 2023 melaksanakan SKD di Badan Kepegawaian Negara, mereka menggunakan kemeja putih. \n**Premis 2** &nbsp;&nbsp;&nbsp;&nbsp;: Budi berada di Badan Kepegawaian Negara, ia menggunakan pakaian batik.\n**Kesimpulan** : Budi bukan peserta CPNS tahun 2023.",
+        value: `**Jawaban: D**
+
+* **Premis 1**: Semua peserta CPNS tahun 2023 melaksanakan SKD di Badan Kepegawaian Negara dan menggunakan kemeja putih.
+* **Premis 2**: Budi berada di Badan Kepegawaian Negara dan menggunakan pakaian batik.
+* **Kesimpulan**: **Budi bukan peserta CPNS tahun 2023.**`,
       },
     ],
   },
@@ -1542,7 +1577,7 @@ Siapa yang mendapatkan medali emas?`,
       {
         type: "text",
         value:
-          "**Jawaban: B**\n\n➡ &nbsp; Kompor digunakan untuk memasak.\n➡ &nbsp; Pulpen digunakan untuk menulis.",
+          "**Jawaban: B**\n\n➡ &nbsp; Kompor digunakan untuk memasak.\n\n ➡ &nbsp; Pulpen digunakan untuk menulis.",
       },
     ],
   },
@@ -1566,7 +1601,7 @@ Siapa yang mendapatkan medali emas?`,
       {
         type: "text",
         value:
-          "**Jawaban: A**\n\n➡ &nbsp; 	Film dibuat oleh sutradara. \n➡ &nbsp; 	Buku dibuat oleh penulis.",
+          "**Jawaban: A**\n\n➡ &nbsp;	Film dibuat oleh sutradara. \n\n➡ &nbsp; Buku dibuat oleh penulis.",
       },
     ],
   },
@@ -1591,7 +1626,7 @@ Siapa yang mendapatkan medali emas?`,
       {
         type: "text",
         value:
-          "**Jawaban: E**\n\n**Soal** : Benda itu (s) belum dapat dimanfaatkan (p) di dunia teknologi (ket).\n\n**A** : Privasi seseorang (s) harus dijaga dengan baik (p) di setiap situasi (ket).\n**B** : Presentasi itu (s) memerlukan (p) persiapan yang serius (o) dalam kurung waktu lima jam (ket).\n**C** : Aktivitas sosial (s) mewakili (p) pandangan mereka (o) di forum pemerintahan (s).\n**D** : Konflik apapun (s) selalu merugikan (p) warga kurang mampu (o).\n**E** : Saya (s) masih belum tahu tentang (p) insiden menegangkan itu (o).",
+          "**Jawaban: E**\n\n**Soal** : Benda itu (s) belum dapat dimanfaatkan (p) di dunia teknologi (ket).\n\n**A** : Privasi seseorang (s) harus dijaga dengan baik (p) di setiap situasi (ket).\n\n**B** : Presentasi itu (s) memerlukan (p) persiapan yang serius (o) dalam kurung waktu lima jam (ket).\n\n**C** : Aktivitas sosial (s) mewakili (p) pandangan mereka (o) di forum pemerintahan (s).\n\n**D** : Konflik apapun (s) selalu merugikan (p) warga kurang mampu (o).\n\n**E** : Saya (s) masih belum tahu tentang (p) insiden menegangkan itu (o).",
       },
     ],
   },
@@ -1620,7 +1655,7 @@ Siapa yang mendapatkan medali emas?`,
       {
         type: "text",
         value:
-          "**Jawaban: A**\n\n**Soal** : Benda itu (s) belum dapat dimanfaatkan (p) di dunia teknologi (ket).\n\n**A** : Privasi seseorang (s) harus dijaga dengan baik (p) di setiap situasi (ket).\n**B** : Presentasi itu (s) memerlukan (p) persiapan yang serius (o) dalam kurung waktu lima jam (ket).\n**C** : Aktivitas sosial (s) mewakili (p) pandangan mereka (o) di forum pemerintahan (s).\n**D** : Konflik apapun (s) selalu merugikan (p) warga kurang mampu (o).\n**E** : Saya (s) masih belum tahu tentang (p) insiden menegangkan itu (o).",
+          "**Jawaban: A**\n\n**Soal** : Benda itu (s) belum dapat dimanfaatkan (p) di dunia teknologi (ket).\n\n**A** : Privasi seseorang (s) harus dijaga dengan baik (p) di setiap situasi (ket).\n\n**B** : Presentasi itu (s) memerlukan (p) persiapan yang serius (o) dalam kurung waktu lima jam (ket).\n\n**C** : Aktivitas sosial (s) mewakili (p) pandangan mereka (o) di forum pemerintahan (s).\n\n**D** : Konflik apapun (s) selalu merugikan (p) warga kurang mampu (o).\n\n**E** : Saya (s) masih belum tahu tentang (p) insiden menegangkan itu (o).",
       },
     ],
   },
@@ -1645,7 +1680,7 @@ Siapa yang mendapatkan medali emas?`,
       {
         type: "text",
         value:
-          "**Jawaban: A**\n\n**Soal** : Bunga mawar merah muda (s) memiliki (p) warna yang sangat memikat (o).\n\n**A** : Dani (s) menjual (p) papaya yang sangat manis (o).\n**B** : populasi pohon durian (s) di Medan (ket) cukup besar (p).\n**C** : Pedagang (s) menjajakan (p) manggis (o) di pasar (ket).\n**D** : Aroma anggrek (s) tercium (p) pada jarak 2-3 meter (ket).\n**E** : Lahan-lahan yang kurang produktif (s) dimanfaatkan (p) sebagai kebun stroberi (ket).",
+          "**Jawaban: A**\n\n**Soal** : Bunga mawar merah muda (s) memiliki (p) warna yang sangat memikat (o).\n\n**A** : Dani (s) menjual (p) papaya yang sangat manis (o).\n\n**B** : populasi pohon durian (s) di Medan (ket) cukup besar (p).\n\n**C** : Pedagang (s) menjajakan (p) manggis (o) di pasar (ket).\n\n**D** : Aroma anggrek (s) tercium (p) pada jarak 2-3 meter (ket).\n\n**E** : Lahan-lahan yang kurang produktif (s) dimanfaatkan (p) sebagai kebun stroberi (ket).",
       },
     ],
   },
@@ -1674,7 +1709,7 @@ Siapa yang mendapatkan medali emas?`,
       {
         type: "text",
         value:
-          "**Jawaban: B**\n\n**Soal** : Saya (s) menyelesaikan (p) tugas ini (o) dengan hati-hati (ket).\n\n**A** : Acara tersebut (s) akan diadakan (p) minggu depan (ket).\n**B** : Dia (s) memberikan (p) laporan tentang hasil kunjungannya (o) pekan lalu (ket).\n**C** : Dia (s) tiba (p) bersama seorang teman (ket).\n**D** : Wadah yang berisi sup (s) tumpah (p).\n**E** : Beberapa siswa (s) mempertanyakan (p) kebijakan tersebut (o).",
+          "**Jawaban: B**\n\n**Soal** : Saya (s) menyelesaikan (p) tugas ini (o) dengan hati-hati (ket).\n\n**A** : Acara tersebut (s) akan diadakan (p) minggu depan (ket).\n\n**B** : Dia (s) memberikan (p) laporan tentang hasil kunjungannya (o) pekan lalu (ket).\n\n**C** : Dia (s) tiba (p) bersama seorang teman (ket).\n\n**D** : Wadah yang berisi sup (s) tumpah (p).\n\n**E** : Beberapa siswa (s) mempertanyakan (p) kebijakan tersebut (o).",
       },
     ],
   },
@@ -1701,7 +1736,7 @@ Siapa yang mendapatkan medali emas?`,
       {
         type: "text",
         value:
-          "**Jawaban: A**\n\n➡ &nbsp; **Belajar lebih awal**\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Kelas 8 &nbsp;&nbsp;=> 10 + 20 + 30 = 60\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Kelas 12 => 15 + 25 + 35 = 75\n\n➡ &nbsp; **Belajar lebih malam**\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Kelas 8 &nbsp;&nbsp;=> 15 + 50 + 45 = 110\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Kelas 12 => 25 + 10 + 5 = 40\n\nMaka kesimpulannya adalah pelajar kelas 8 cenderung belajar lebih malam.",
+          "**Jawaban: A**\n\n➡ &nbsp; **Belajar lebih awal**\n\n Kelas 8 &nbsp;&nbsp;=> 10 + 20 + 30 = 60\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Kelas 12 => 15 + 25 + 35 = 75\n\n➡ &nbsp; **Belajar lebih malam**\n\n Kelas 8 &nbsp;&nbsp;=> 15 + 50 + 45 = 110\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Kelas 12 => 25 + 10 + 5 = 40\n\nMaka kesimpulannya adalah pelajar kelas 8 cenderung belajar lebih malam.",
       },
     ],
   },
@@ -1730,7 +1765,7 @@ Siapa yang mendapatkan medali emas?`,
       {
         type: "text",
         value:
-          "**Jawaban: D**\n\n➡ &nbsp; Gambar kedua merupakan hasil dari gambar pertama yang diputar 180°\n➡ &nbsp; Kemudian dibagian kanan atas gambar kedua ditambahkan bentuk persegi warna hitam.",
+          "**Jawaban: D**\n\n➡ &nbsp;Gambar kedua merupakan hasil dari gambar pertama yang diputar 180°\n\n➡ &nbsp;Kemudian dibagian kanan atas gambar kedua ditambahkan bentuk persegi warna hitam.",
       },
     ],
   },
@@ -1762,7 +1797,7 @@ Siapa yang mendapatkan medali emas?`,
       {
         type: "text",
         value:
-          "**Jawaban: B**\n\n➡ &nbsp; Pada analogi pertama, gambar diputar 45° searah jarum jam. Maka pada analogi kedua juga demikian.\n➡ &nbsp; Pada analogi pertama, ditambahkan simbol ditengah badan. Maka pada analogi kedua, gambar pertama tidak memiliki simbol dibadannya.\n➡ &nbsp; Pada analogi pertama, warna kepala berubah sedangkan warna badan tidak. Maka pada analogi kedua, warna kepala awalnya adalah putih (kemudian berubah menjadi hitam).",
+          "**Jawaban: B**\n\n➡&nbsp; Pada analogi pertama, gambar diputar 45° searah jarum jam. Maka pada analogi kedua juga demikian.\n\n➡&nbsp; Pada analogi pertama, ditambahkan simbol ditengah badan. Maka pada analogi kedua, gambar pertama tidak memiliki simbol dibadannya.\n\n➡&nbsp; Pada analogi pertama, warna kepala berubah sedangkan warna badan tidak. Maka pada analogi kedua, warna kepala awalnya adalah putih (kemudian berubah menjadi hitam).",
       },
     ],
   },
@@ -1791,7 +1826,7 @@ Siapa yang mendapatkan medali emas?`,
       {
         type: "text",
         value:
-          "**Jawaban: C**\n\n➡ &nbsp; Pada analogi yang pertama, gambar besar yang di tengah berubah warna hitam menjadi putih (warna berlawanan). Maka pada analogi kedua, gambar besarnya juga berubah menjadi warna yang berlawanan (putih menjadi hitam).\n➡ &nbsp; Ada dua gambar kecil yang berada pada bagian kiri dan kanan atas. Kedua gambar ditukar posisinya, namun tetap dengan warnanya masing-masing. Lalu gambar kecil yang di sebelah kanan berubah dari titik sudut 3 menjadi titik sudut 4 (jumlah titik sudut bertambah 1). Maka pada analogi kedua, gambar kecil di sebelah kanan juga berubah bentuk dari titik sudut 5 menjadi titik sudut 6 (titik sudut bertambah 1).",
+          "**Jawaban: C**\n\n➡ &nbsp; Pada analogi yang pertama, gambar besar yang di tengah berubah warna hitam menjadi putih (warna berlawanan). Maka pada analogi kedua, gambar besarnya juga berubah menjadi warna yang berlawanan (putih menjadi hitam).\n\n➡ &nbsp; Ada dua gambar kecil yang berada pada bagian kiri dan kanan atas. Kedua gambar ditukar posisinya, namun tetap dengan warnanya masing-masing. Lalu gambar kecil yang di sebelah kanan berubah dari titik sudut 3 menjadi titik sudut 4 (jumlah titik sudut bertambah 1). Maka pada analogi kedua, gambar kecil di sebelah kanan juga berubah bentuk dari titik sudut 5 menjadi titik sudut 6 (titik sudut bertambah 1).",
       },
     ],
   },
@@ -1819,7 +1854,7 @@ Siapa yang mendapatkan medali emas?`,
       {
         type: "text",
         value:
-          "**Jawaban: E**\n\n➡ &nbsp; Perhatikan tanda panah berputar sesuai arah jarum jam.\n➡ &nbsp; Kemudian liat perubahan warna yang terjadi dari hitam ke putih dan sebaliknya.",
+          "**Jawaban: E**\n\n➡ &nbsp; Perhatikan tanda panah berputar sesuai arah jarum jam.\n\n➡ &nbsp; Kemudian liat perubahan warna yang terjadi dari hitam ke putih dan sebaliknya.",
       },
     ],
   },
@@ -1847,7 +1882,7 @@ Siapa yang mendapatkan medali emas?`,
       {
         type: "text",
         value:
-          "**Jawaban: A**\n\n➡ &nbsp; Perhatikan gambar, jumlah tanda anak panah bertambah 1 maka pada gambar ke empat terdapat 4 anak panah.\n➡ &nbsp; Kemudian pada gambar di tengah gambar 1 dan 3 warna putih maka gambar 2 dan 4 berwarna hitam.",
+          "**Jawaban: A**\n\n➡ &nbsp; Perhatikan gambar, jumlah tanda anak panah bertambah 1 maka pada gambar ke empat terdapat 4 anak panah.\n\n➡ &nbsp; Kemudian pada gambar di tengah gambar 1 dan 3 warna putih maka gambar 2 dan 4 berwarna hitam.",
       },
     ],
   },

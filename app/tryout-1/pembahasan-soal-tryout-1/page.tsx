@@ -2,9 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { ChevronLeft, ChevronRight, BookOpenCheck, Menu, X, Home } from "lucide-react";
-// =========================================================
-// /* PERUBAHAN: Import langsung data tunggal dari questions */
-// =========================================================
+
 import { questions } from "@/lib/questions";
 import ReactMarkdown from "react-markdown";
 import remarkMath from "remark-math";
@@ -169,7 +167,7 @@ export default function PembahasanSoalTryout1() {
                 <h3 className="text-sm font-black text-emerald-800 uppercase tracking-wider mb-3">
                   Pembahasan Soal:
                 </h3>
-                <div className="space-y-4 text-slate-700 text-sm md:text-base leading-relaxed text-justify">
+                <div className="space-y-4 text-slate-700 text-sm md:text-base leading-relaxed text-left">
                   {currentQuestion?.explanation ? (
                     currentQuestion.explanation.map((exp, idx) =>
                       exp.type === "text" ? (
