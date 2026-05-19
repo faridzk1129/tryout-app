@@ -56,9 +56,8 @@ export default function PembahasanSoalTryout1() {
     }
   };
 
-  // ===========================================================
-  // /* PERUBAHAN: Ambil data soal tunggal dari array questions */
-  // ===========================================================
+  // PERUBAHAN: Ambil data soal tunggal dari array questions berdasarkan currentIdx
+
   const currentQuestion = questions[currentIdx] || questions[0];
 
   return (
@@ -160,9 +159,8 @@ export default function PembahasanSoalTryout1() {
                 })}
               </div>
 
-              {/* ======================================================== */}
-              {/* {/* TAMBAHKAN: Box Konten Pembahasan (Teks dan/atau Gambar) */}
-              {/* ======================================================== */}
+              {/* Box Konten Pembahasan (Teks dan/atau Gambar)  */}
+
               <div className="mt-8 pt-6 border-t border-slate-100 bg-emerald-50/50 rounded-2xl p-4 md:p-6 border border-emerald-100">
                 <h3 className="text-sm font-black text-emerald-800 uppercase tracking-wider mb-3">
                   Pembahasan Soal:

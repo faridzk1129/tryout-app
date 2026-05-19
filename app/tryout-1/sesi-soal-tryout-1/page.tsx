@@ -15,7 +15,6 @@ import {
 import { questions, Question } from "@/lib/questions";
 import FocusGuard from "@/components/FocusGuard";
 
-// --- PERUBAHAN DI SINI: Import Library Math Rendering ---
 import ReactMarkdown from "react-markdown";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
@@ -23,7 +22,7 @@ import "katex/dist/katex.min.css";
 // -------------------------------------------------------
 
 const TOTAL_SOAL = 110;
-const DURATION_SECONDS = 100 * 60; // 100 Menit (Standar SKD)
+const DURATION_SECONDS = 100 * 60; // Atur Waktu 100 Menit
 
 export default function SesiSoalTryout1() {
   const router = useRouter();
@@ -38,7 +37,7 @@ export default function SesiSoalTryout1() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   {
-    /* TAMBAHKAN/PERUBAHAN: State untuk Modal Confirm & Error Toast */
+    /* State untuk Modal Confirm & Error Toast */
   }
   const [showConfirm, setShowConfirm] = useState(false);
   const [error, setError] = useState("");
@@ -131,9 +130,6 @@ export default function SesiSoalTryout1() {
     }
   };
 
-  {
-    /* TAMBAHKAN/PERUBAHAN: Versi terbaru handleFinalSubmit */
-  }
   const handleFinalSubmit = async (isAuto = false) => {
     // Jika bukan auto-submit dan modal belum dikonfirmasi, tampilkan modal
     if (!isAuto && !showConfirm) {
@@ -142,7 +138,7 @@ export default function SesiSoalTryout1() {
     }
 
     setIsSubmitting(true);
-    setShowConfirm(false); // Tutup modal jika user sudah klik "Iya"
+    setShowConfirm(false);
 
     let scoreTwk = 0;
     let scoreTiu = 0;
@@ -186,7 +182,6 @@ export default function SesiSoalTryout1() {
         setError("Gagal menyimpan hasil. Silahkan coba lagi.");
       }
     } catch (err) {
-      // Ganti alert dengan setError toast
       setError("Koneksi gagal. Periksa jaringan anda.");
     } finally {
       setIsSubmitting(false);
@@ -205,7 +200,7 @@ export default function SesiSoalTryout1() {
   return (
     <main className="min-h-screen bg-slate-50 flex flex-col overflow-x-hidden">
       <FocusGuard />
-      {/* TAMBAHKAN/PERUBAHAN: Toast Error */}
+      {/* Toast Error */}
       <div
         className={`fixed top-5 right-5 z-[100] transition-all duration-500 transform ${error ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"}`}
       >
@@ -223,7 +218,7 @@ export default function SesiSoalTryout1() {
         </div>
       </div>
 
-      {/* TAMBAHKAN/PERUBAHAN: Modal Confirm */}
+      {/* Modal Confirm */}
       {showConfirm && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
           <div
@@ -256,7 +251,7 @@ export default function SesiSoalTryout1() {
         </div>
       )}
 
-      {/* TAMBAHKAN/PERUBAHAN: Wrapper Blur jika Modal Muncul */}
+      {/* Wrapper Blur jika Modal Muncul */}
       <div
         className={`transition-all duration-300 ${showConfirm ? "blur-sm pointer-events-none" : ""}`}
       >
@@ -305,7 +300,7 @@ export default function SesiSoalTryout1() {
                   </span>
                 </div>
 
-                {/* --- PERUBAHAN DI SINI: Render Konten Soal --- */}
+                {/* --- Render Konten Soal --- */}
                 <div className="space-y-4 mb-8">
                   {currentQuestion.content.map((item, i) =>
                     item.type === "text" ? (
@@ -329,7 +324,7 @@ export default function SesiSoalTryout1() {
                 </div>
                 {/* ------------------------------------------------------------- */}
 
-                {/* --- PERBAIKAN DI SINI: Render Opsi Jawaban --- */}
+                {/* --- Render Opsi Jawaban --- */}
                 <div className="space-y-3">
                   {currentQuestion.options.map((opt, i) => {
                     const isSelected = answers[currentIdx + 1]?.selected === opt.label;
@@ -337,17 +332,14 @@ export default function SesiSoalTryout1() {
                       <button
                         key={i}
                         onClick={() => handleSelectOption(opt.label, opt.points)}
-                        // PERUBAHAN: items-start untuk menyelaraskan label ke atas jika ada gambar
                         className={`w-full text-left p-4 rounded-2xl border-2 transition-all flex items-start gap-4 group ${isSelected ? "border-indigo-600 bg-indigo-50 text-indigo-700 shadow-sm" : "border-slate-100 bg-slate-50 text-slate-600 hover:border-indigo-200"}`}
                       >
                         <div
-                          // PERUBAHAN: mt-1 agar label sejajar dengan baris pertama teks/gambar
                           className={`w-8 h-8 rounded-lg  flex items-center justify-center font-bold text-sm   ${isSelected ? "bg-indigo-600 text-white" : "bg-white border border-slate-200 text-slate-400"}`}
                         >
                           {opt.label}
                         </div>
                         <div className="flex flex-col gap-4 w-full overflow-hidden mt-[2px] ">
-                          {/* PERUBAHAN: Tambahkan kondisi !opt.image agar teks hanya tampil jika TIDAK ADA gambar */}
                           {opt.text && !opt.image && (
                             <div className="text-sm md:text-base font-medium prose prose-slate max-w-none">
                               <ReactMarkdown
@@ -358,9 +350,7 @@ export default function SesiSoalTryout1() {
                               </ReactMarkdown>
                             </div>
                           )}
-                          {/* --------------------------- */}
 
-                          {/* Gambar Opsi */}
                           {opt.image && (
                             <div className="flex justify-start">
                               <img
