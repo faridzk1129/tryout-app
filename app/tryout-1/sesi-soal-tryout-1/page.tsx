@@ -19,10 +19,10 @@ import ReactMarkdown from "react-markdown";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 import "katex/dist/katex.min.css";
-// -------------------------------------------------------
+
 
 const TOTAL_SOAL = 110;
-const DURATION_SECONDS = 100 * 60; // Atur Waktu 100 Menit
+const DURATION_SECONDS = 100 * 60; 
 
 export default function SesiSoalTryout1() {
   const router = useRouter();

@@ -1626,7 +1626,7 @@ Siapa yang mendapatkan medali emas?`,
       {
         type: "text",
         value:
-          "**Jawaban: E**\n\n**Soal** : Benda itu (s) belum dapat dimanfaatkan (p) di dunia teknologi (ket).\n\n**A** : Privasi seseorang (s) harus dijaga dengan baik (p) di setiap situasi (ket).\n\n**B** : Presentasi itu (s) memerlukan (p) persiapan yang serius (o) dalam kurung waktu lima jam (ket).\n\n**C** : Aktivitas sosial (s) mewakili (p) pandangan mereka (o) di forum pemerintahan (s).\n\n**D** : Konflik apapun (s) selalu merugikan (p) warga kurang mampu (o).\n\n**E** : Saya (s) masih belum tahu tentang (p) insiden menegangkan itu (o).",
+          "**Jawaban: E**\n\n**Soal** : Benda itu (s) belum dapat dimanfaatkan (p) di dunia teknologi (ket).\n\n**A** : Petani (s) berladang (p) di tengah perkebunan (ket).\n\n**B** : Mereka (s) bertani (p) dengan penuh dedikasi (ket).\n\n**C** : Di perkebunan (ket) banyak (p) tanaman yang subur (s).\n\n**D** : Hasil panen (s) dijual (p) di pasar (ket).\n\n**E** : Petani itu (s) juga menjual (p) hasil panen (o) di pagi hari (ket).",
       },
     ],
   },
@@ -2240,8 +2240,8 @@ Siapa yang mendapatkan medali emas?`,
       },
     ],
     options: [
-      { label: "A", text: "Menelpon Kepala Sekolah untuk meminta pendapat", points: 4 },
-      { label: "B", text: "Mewakili menandatangani dokumen", points: 2 },
+      { label: "A", text: "Menelpon Kepala Sekolah untuk meminta pendapat", points: 2 },
+      { label: "B", text: "Mewakili menandatangani dokumen", points: 4 },
       {
         label: "C",
         text: "Menandatangani dokumen dengan sebelumnya memberi tahu beliau",
@@ -2276,24 +2276,24 @@ Siapa yang mendapatkan medali emas?`,
       },
     ],
     options: [
-      { label: "A", text: "Mengonfirmasi apakah ia masih sanggup bekerja", points: 4 },
-      { label: "B", text: "Membantu pekerjaan teman tersebut agar selesai", points: 5 },
+      { label: "A", text: "Mengonfirmasi apakah ia masih sanggup bekerja", points: 3 },
+      { label: "B", text: "Membantu pekerjaan teman tersebut agar selesai", points: 4 },
       {
         label: "C",
         text: "Menegur agar tidak menjadikan kehamilan sebagai alasan leha-leha",
-        points: 1,
+        points: 2,
       },
-      { label: "D", text: "Memilih untuk tidak memikirkannya", points: 2 },
+      { label: "D", text: "Memilih untuk tidak memikirkannya", points: 1 },
       {
         label: "E",
         text: "Mengajak teman lain untuk bersama-sama menyelesaikan bagiannya",
-        points: 3,
+        points: 5,
       },
     ],
     explanation: [
       {
         type: "text",
-        value: "**Jawaban: B**\n\n",
+        value: "**Jawaban: E**\n\n",
       },
       {
         type: "image",
@@ -2318,9 +2318,9 @@ Siapa yang mendapatkan medali emas?`,
         text: "Mengajak guru mengecek bersama dan mengelompokkan alat layak pakai",
         points: 5,
       },
-      { label: "C", text: "Mengusulkan beli alat baru karena alat lama tidak layak", points: 2 },
-      { label: "D", text: "Mengatakan sebaiknya guru tersebut mengkalibrasi sendiri", points: 1 },
-      { label: "E", text: "Meminta guru tersebut menggunakan alat yang ada saja", points: 3 },
+      { label: "C", text: "Mengusulkan beli alat baru karena alat lama tidak layak", points: 1 },
+      { label: "D", text: "Mengatakan sebaiknya guru tersebut mengkalibrasi sendiri", points: 3 },
+      { label: "E", text: "Meminta guru tersebut menggunakan alat yang ada saja", points: 2 },
     ],
     explanation: [
       {
@@ -2352,7 +2352,7 @@ Siapa yang mendapatkan medali emas?`,
       {
         label: "B",
         text: "Mencari cara agar rekan tersebut kembali bersemangat bekerja",
-        points: 4,
+        points: 5,
       },
       {
         label: "C",
@@ -2362,14 +2362,14 @@ Siapa yang mendapatkan medali emas?`,
       {
         label: "D",
         text: "Memberi semangat dan mencari solusi percepatan dengan bantuan tim",
-        points: 5,
+        points: 4,
       },
       { label: "E", text: "Menegur dan melaporkannya kepada atasan", points: 1 },
     ],
     explanation: [
       {
         type: "text",
-        value: "**Jawaban: D**\n\n",
+        value: "**Jawaban: B**\n\n",
       },
       {
         type: "image",
@@ -2387,11 +2387,11 @@ Siapa yang mendapatkan medali emas?`,
       },
     ],
     options: [
-      { label: "A", text: "Menegur semua anggota tim", points: 1 },
+      { label: "A", text: "Menegur semua anggota tim", points: 2 },
       { label: "B", text: "Melakukan evaluasi, diskusi, dan meningkatkan kekompakan", points: 5 },
       { label: "C", text: "Menegur anggota yang selama ini terkesan santai", points: 3 },
-      { label: "D", text: "Membuat aturan baru untuk mendisiplinkan anggota", points: 4 },
-      { label: "E", text: "Memberi peringatan keras dan ancaman", points: 2 },
+      { label: "D", text: "Membuat aturan baru untuk mendisiplinkan anggota", points: 1 },
+      { label: "E", text: "Memberi peringatan keras dan ancaman", points: 4 },
     ],
     explanation: [
       {
@@ -2415,14 +2415,14 @@ Siapa yang mendapatkan medali emas?`,
       },
     ],
     options: [
-      { label: "A", text: "Memaklumi karena hal tersebut tidak terhindarkan", points: 2 },
-      { label: "B", text: "Menegur agar bisa fokus bekerja", points: 1 },
+      { label: "A", text: "Memaklumi karena hal tersebut tidak terhindarkan", points: 1 },
+      { label: "B", text: "Menegur agar bisa fokus bekerja", points: 4 },
       { label: "C", text: "Memaklumi dan mengajaknya kembali fokus serta profesional", points: 5 },
       { label: "D", text: "Memberi peringatan bahwa cuti sudah berakhir", points: 3 },
       {
         label: "E",
         text: "Memaklumi namun tetap memberi sanksi jika masih tidak fokus",
-        points: 4,
+        points: 2,
       },
     ],
     explanation: [
@@ -2450,8 +2450,8 @@ Siapa yang mendapatkan medali emas?`,
       { label: "A", text: "Menerima apapun perubahan meski terasa berat", points: 4 },
       { label: "B", text: "Mengikuti segala kebijakan yang diterapkan pimpinan baru", points: 5 },
       { label: "C", text: "Berusaha menyesuaikan diri meski butuh waktu lama", points: 3 },
-      { label: "D", text: "Memilih bekerja dengan ritme pimpinan lama", points: 1 },
-      { label: "E", text: "Bekerja sesuai keinginan selama tidak ada teguran", points: 2 },
+      { label: "D", text: "Memilih bekerja dengan ritme pimpinan lama", points: 2 },
+      { label: "E", text: "Bekerja sesuai keinginan selama tidak ada teguran", points: 1 },
     ],
     explanation: [
       {
@@ -2475,11 +2475,11 @@ Siapa yang mendapatkan medali emas?`,
       },
     ],
     options: [
-      { label: "A", text: "Mengatakan sedang di luar dan tidak bisa bicara lama", points: 2 },
-      { label: "B", text: "Meminta maaf karena sedang sibuk", points: 1 },
+      { label: "A", text: "Mengatakan sedang di luar dan tidak bisa bicara lama", points: 3 },
+      { label: "B", text: "Meminta maaf karena sedang sibuk", points: 2 },
       { label: "C", text: "Meminta maaf dan berjanji menelpon balik setelah pulang", points: 5 },
       { label: "D", text: "Mengatakan akan menelpon balik setelah tamu pulang", points: 4 },
-      { label: "E", text: "Mengatakan tidak usah banyak bertanya", points: 3 },
+      { label: "E", text: "Mengatakan tidak usah banyak bertanya", points: 1 },
     ],
     explanation: [
       {
@@ -2503,16 +2503,16 @@ Siapa yang mendapatkan medali emas?`,
       },
     ],
     options: [
-      { label: "A", text: "Memberi peringatan langsung dengan tulisan larangan", points: 2 },
-      { label: "B", text: "Menggunjingkan dengan tetangga lain", points: 1 },
-      { label: "C", text: "Mendatangi rumahnya dan berdiskusi soal pengelolaan sampah", points: 5 },
-      { label: "D", text: "Melapor kepada ketua RT karena kesal", points: 3 },
-      { label: "E", text: "Memilih diam saja agar tidak ribut", points: 4 },
+      { label: "A", text: "Memberi peringatan langsung dengan tulisan larangan", points: 3 },
+      { label: "B", text: "Membuat tulisan dilaranag membakar sampah", points: 4 },
+      { label: "C", text: "Menggunjingkan dengan tetangga lain", points: 1 },
+      { label: "D", text: "Melapor kepada ketua RT karena kesal", points: 5 },
+      { label: "E", text: "Memilih diam saja agar tidak ribut", points: 2 },
     ],
     explanation: [
       {
         type: "text",
-        value: "**Jawaban: C**\n\n",
+        value: "**Jawaban: D**\n\n",
       },
       {
         type: "image",
@@ -2536,9 +2536,21 @@ Siapa yang mendapatkan medali emas?`,
         text: "Mendatangi rumahnya dan meminta berhenti karena sudah malam",
         points: 4,
       },
-      { label: "C", text: "Mengetuk pagar rumahnya dengan keras", points: 2 },
-      { label: "D", text: "Mendatangi rumahnya dan bicara baik-baik tanpa emosi", points: 5 },
-      { label: "E", text: "Membuat papan larangan gaduh di waktu istirahat", points: 1 },
+      {
+        label: "C",
+        text: "Mengetuk pagar rumahnya sambil berkata suara gitarnya menganggu",
+        points: 1,
+      },
+      {
+        label: "D",
+        text: "Mendatangi rumahnya, mengutarakan ketidaknyamanan Anda dengan baik tanpa emosi",
+        points: 5,
+      },
+      {
+        label: "E",
+        text: "Memilih untuk membuat papan peringatan bertulis larangan gaduh di waktu istrahat malam",
+        points: 2,
+      },
     ],
     explanation: [
       {
@@ -2562,11 +2574,19 @@ Siapa yang mendapatkan medali emas?`,
       },
     ],
     options: [
-      { label: "A", text: "Melapor kepada ketua RT", points: 4 },
-      { label: "B", text: "Mendatangi rumahnya dan meminta acara dibubarkan", points: 1 },
-      { label: "C", text: "Besoknya datang mengajak dialog agar maksud tersampaikan", points: 5 },
-      { label: "D", text: "Mengirim pesan bahwa Anda terganggu", points: 3 },
-      { label: "E", text: "Meluapkan kekesalan di media sosial", points: 2 },
+      { label: "A", text: "Melapor kepada ketua RT", points: 2 },
+      { label: "B", text: "Mendatangi rumahnya dan meminta acara dibubarkan", points: 3 },
+      {
+        label: "C",
+        text: "Ke esokan harinya datang ke rumah tetangga mengajak dialog agar maksud Anda tersampaikan",
+        points: 5,
+      },
+      {
+        label: "D",
+        text: "Mengirim pesan bahwa Anda terganggu dan sebaiknya jika ada acara kumpul keluarga ingat waktu",
+        points: 4,
+      },
+      { label: "E", text: "Meluapkan kekesalan di media sosial", points: 1 },
     ],
     explanation: [
       {
@@ -2595,19 +2615,19 @@ Siapa yang mendapatkan medali emas?`,
       {
         label: "C",
         text: "Memberi waktu sebentar, lalu lanjut belajar dan memintanya pulang",
-        points: 3,
+        points: 5,
       },
       { label: "D", text: "Mendengar curhatnya sampai ia lega meski gagal belajar", points: 2 },
-      { label: "E", text: "Mengatakan Anda harus belajar dan memintanya menunggu", points: 5 },
+      { label: "E", text: "Mengatakan Anda harus belajar dan memintanya menunggu", points: 3 },
     ],
     explanation: [
       {
         type: "text",
-        value: "**Jawaban: E**\n\n",
+        value: "**Jawaban: C**\n\n",
       },
       {
         type: "image",
-        value: "/tryout-1/explanation-90.png",
+        value: "/tryout-1/explanation-86.png",
       },
     ],
   },
@@ -2618,15 +2638,31 @@ Siapa yang mendapatkan medali emas?`,
       {
         type: "text",
         value:
-          "Teman yang gagal SKD datang curhat, namun sebentar lagi Anda akan kedatangan tamu kerabat jauh. Sikap Anda …",
+          "Kepada teman yang kebetulan baru saja gagal dalam ujian SKD CPNS, ia terlihat frustasi karena orangtuanya akan kecewa dengan kegagalanya. Ia datang ke rumah Anda dan ingin banyak bercerita. Kebetulan Anda sebentar lagi ada tamu, kerabat jauh. Sikap Anda ….",
       },
     ],
     options: [
       { label: "A", text: "Menolak kedatangannya", points: 1 },
-      { label: "B", text: "Memberi waktu curhat dan membatasi jika tamu sudah datang", points: 5 },
-      { label: "C", text: "Memberi waktu sampai tamu datang, lalu menyuruhnya pulang", points: 3 },
-      { label: "D", text: "Mengatakan curhat lain waktu karena ada tamu penting", points: 2 },
-      { label: "E", text: "Mengatakan Anda sedang menunggu tamu, curhat bisa nanti", points: 4 },
+      {
+        label: "B",
+        text: "Memberi waktu curhat, dan mengatakan jika tamu Anda sudah datang maka Anda tidak bisa menemani teman curhat",
+        points: 5,
+      },
+      {
+        label: "C",
+        text: "Memberi waktu curhat sampai tamu Anda datang, setelahnya Anda menyuruh pulang",
+        points: 4,
+      },
+      {
+        label: "D",
+        text: "Mengatakan bahwa lebih baik curhat di lain waktu, Anda akan menemui tamu yang lebih penting",
+        points: 2,
+      },
+      {
+        label: "E",
+        text: "Mengatakan bahwa Anda sedang menunggu kedatangan tamu, jadi curhatnya bisa nanti setelah Anda menemui tamu Anda",
+        points: 3,
+      },
     ],
     explanation: [
       {
@@ -2650,20 +2686,24 @@ Siapa yang mendapatkan medali emas?`,
       },
     ],
     options: [
-      { label: "A", text: "Menolak dan mengatakan itu hanya mitos", points: 2 },
+      { label: "A", text: "Menolak dan mengatakan itu hanya mitos", points: 1 },
       {
         label: "B",
-        text: "Menjelaskan semua hari baik namun tetap mengikuti anjuran beliau",
+        text: "Mengatakan bahwa semua hari baik tidak usah dihubung-hubungkan dengan mitos kemudian Anda mengikuti anjuran nenek",
+        points: 2,
+      },
+      {
+        label: "C",
+        text: "Menurut apa kata nenek Anda demi menghormati kepercayaan beliau",
         points: 5,
       },
-      { label: "C", text: "Menurut apa kata nenek demi menghormati kepercayaannya", points: 4 },
-      { label: "D", text: "Menurut karena merasa tidak enak hati", points: 3 },
-      { label: "E", text: "Menurut namun tetap menegaskan itu mitos", points: 1 },
+      { label: "D", text: "Menurut karena merasa tidak enak hati", points: 4 },
+      { label: "E", text: "Menurut namun tetap menegaskan itu mitos", points: 3 },
     ],
     explanation: [
       {
         type: "text",
-        value: "**Jawaban: B**\n\n",
+        value: "**Jawaban: C**\n\n",
       },
       {
         type: "image",
@@ -2683,12 +2723,12 @@ Siapa yang mendapatkan medali emas?`,
     ],
     options: [
       { label: "A", text: "Datang sebentar untuk ramah tamah sebelum pergi", points: 4 },
-      { label: "B", text: "Hanya mengirim makanan untuk warga", points: 2 },
+      { label: "B", text: "Hanya mengirim makanan untuk warga", points: 3 },
       { label: "C", text: "Tidak datang kerja bakti", points: 1 },
       {
         label: "D",
         text: "Pergi ke acara Anda lalu meminta maaf ke Ketua RT saat pulang",
-        points: 3,
+        points: 2,
       },
       {
         label: "E",
@@ -2703,7 +2743,7 @@ Siapa yang mendapatkan medali emas?`,
       },
       {
         type: "image",
-        value: "/tryout-1/explanation-90.png",
+        value: "/tryout-1/explanation-89.png",
       },
     ],
   },
@@ -2718,14 +2758,26 @@ Siapa yang mendapatkan medali emas?`,
       },
     ],
     options: [
-      { label: "A", text: "Memberi pengertian agar RT/RW memberi dukungan", points: 3 },
-      { label: "B", text: "Mengajak tim memberi edukasi soal rencana ini", points: 4 },
+      {
+        label: "A",
+        text: "Berusaha memberi pengertian kepada RT dan RW agar memberi dukungan kepada Anda",
+        points: 3,
+      },
+      {
+        label: "B",
+        text: "Mengajak tim yang kelak bisa memberi edukasi soal rencana baik ini",
+        points: 2,
+      },
       {
         label: "C",
-        text: "Mengusulkan pertemuan warga untuk membahas kerjasama program",
+        text: "Mengusulkan kepada ketua RT dan RW agar diadakan pertemuan dengan warga guna membahas hal ini agar kelak warga juga bisa ikut bekerjasama dalam merealisasikan program",
         points: 5,
       },
-      { label: "D", text: "Mengajak warga terlibat langsung merealisasikan program", points: 2 },
+      {
+        label: "D",
+        text: "Mengajak serta warga untuk membantu merealisasikan program dengan melibatkannya dalam segala kegiatan terkait program ini",
+        points: 4,
+      },
       { label: "E", text: "Menunggu RT/RW luluh baru bergerak", points: 1 },
     ],
     explanation: [
@@ -2749,16 +2801,20 @@ Siapa yang mendapatkan medali emas?`,
       },
     ],
     options: [
-      { label: "A", text: "Tidak langsung percaya", points: 3 },
-      { label: "B", text: "Mencari tahu dari berbagai sumber", points: 5 },
-      { label: "C", text: "Membaca teliti seluruh isi berita", points: 4 },
+      { label: "A", text: "Tidak langsung percaya", points: 2 },
+      { label: "B", text: "Mencari tahu dari berbagai sumber", points: 4 },
+      { label: "C", text: "Membaca teliti seluruh isi berita", points: 5 },
       { label: "D", text: "Memilih berkomentar tanpa membaca", points: 1 },
-      { label: "E", text: "Menghubungi layanan verifikasi sebelum membagikannya", points: 2 },
+      {
+        label: "E",
+        text: "Menghubungi layanan nomor WA untuk mengetahui kebenaran berita sebelum membagikanya",
+        points: 3,
+      },
     ],
     explanation: [
       {
         type: "text",
-        value: "**Jawaban: B**\n\n",
+        value: "**Jawaban: C**\n\n",
       },
       {
         type: "image",
@@ -2772,20 +2828,29 @@ Siapa yang mendapatkan medali emas?`,
     content: [
       {
         type: "text",
-        value: "Usulan program Kampung Cyber ditolak warga karena takut biaya besar. Sikap Anda …",
+        value:
+          "Ketika memberikan usulan terkait program kampus cyber dalam rapat RT, ternyata usulan Anda ditolak karena masyarakat belum memahami rencana Anda dan mengira bahwa usulan tersebut membutuhkan biaya besar. Sikap Anda …",
       },
     ],
     options: [
-      { label: "A", text: "Mencoba menjelaskan detail biaya (hibah)", points: 5 },
-      { label: "B", text: "Mengubah usulan menjadi uji coba lingkup kecil", points: 4 },
-      { label: "C", text: "Melobi tokoh penting masyarakat", points: 3 },
+      { label: "A", text: "Mencoba menjelaskan detail biaya (hibah)", points: 4 },
+      {
+        label: "B",
+        text: "Mengubah usulan menjadi lebih sederhana tidak menyeluruh kampung tetapi dengan sistem ujicoba di lingkup yang lebih kecil",
+        points: 5,
+      },
+      {
+        label: "C",
+        text: "Memperjuangkan ide Anda dengan melobi tokoh penting di masyarakat",
+        points: 1,
+      },
       { label: "D", text: "Menerima penolakan dengan lapang dada", points: 2 },
-      { label: "E", text: "Menjadikan pelajaran agar lebih realistis", points: 1 },
+      { label: "E", text: "Menjadikan sebagai pelajaran bahwa Anda harus realistis", points: 3 },
     ],
     explanation: [
       {
         type: "text",
-        value: "**Jawaban: A**\n\n",
+        value: "**Jawaban: B**\n\n",
       },
       {
         type: "image",
@@ -2800,14 +2865,14 @@ Siapa yang mendapatkan medali emas?`,
       {
         type: "text",
         value:
-          "Sebagai CS Online, ada nasabah ingin batal polis namun waktu Anda hanya 5 menit, sementara keluhannya banyak. Sikap Anda …",
+          "Ketika Anda bertugas sebagai customer servise online untuk salah satu produk asuransi. Ada customer yang ingin melakukan pembatalan polis. Namun, waktu Anda terbatas untuk menjelaskan hanya sekitar 5 menit. Sementara hal yang ia keluhkan banyak. Sikap Anda ….",
       },
     ],
     options: [
-      { label: "A", text: "Belajar berkomunikasi efektif", points: 3 },
-      { label: "B", text: "Berkomunikasi efektif dan memecahkan masalah", points: 5 },
+      { label: "A", text: "Belajar untuk berkomunikasi secara efektif", points: 4 },
+      { label: "B", text: "Melakukan komunikasi secara efektif dan memecahkan masalah", points: 5 },
       { label: "C", text: "Berbicara seperlunya", points: 2 },
-      { label: "D", text: "Mengirim email untuk penjelasan detail", points: 4 },
+      { label: "D", text: "Mengatakan akan mengirimi email untuk penjelasan detail", points: 3 },
       { label: "E", text: "Meminta teman lain menjelaskan", points: 1 },
     ],
     explanation: [
@@ -2827,19 +2892,20 @@ Siapa yang mendapatkan medali emas?`,
     content: [
       {
         type: "text",
-        value: "Nasabah mengeluh gagal m-banking. Setelah dicoba lama tetap gagal. Sikap Anda …",
+        value:
+          "Ketika Anda bertugas sebagai customer servis di salah satu bank, ada nasabah yang mengeluh tidak bisa mengakses layanan mbanking. Saat Anda berusaha menangani keluhannya ternyata tidak berhasil. Padahal sudah lama Anda mencobanya, sikap Anda ….",
       },
     ],
     options: [
-      { label: "A", text: "Bertanya kepada rekan lain", points: 3 },
-      { label: "B", text: "Meminta maaf karena belum bisa menyelesaikan", points: 1 },
-      { label: "C", text: "Meminta maaf dan memintanya datang kembali nanti", points: 2 },
+      { label: "A", text: "Bertanya kepada rekan lain", points: 2 },
+      { label: "B", text: "Meminta maaf karena belum bisa menyelesaikan", points: 4 },
+      { label: "C", text: "Meminta maaf dan memintanya datang kembali nanti", points: 3 },
       {
         label: "D",
         text: "Meminta maaf, mencatat nomor, dan akan menghubungi jika ada solusi",
         points: 5,
       },
-      { label: "E", text: "Mengatakan sudah tidak bisa membantu", points: 4 },
+      { label: "E", text: "Mengatakan sudah tidak bisa membantu", points: 1 },
     ],
     explanation: [
       {
@@ -2865,9 +2931,9 @@ Siapa yang mendapatkan medali emas?`,
     options: [
       { label: "A", text: "Tidak langsung percaya", points: 4 },
       { label: "B", text: "Mencari berita dari berbagai sumber", points: 5 },
-      { label: "C", text: "Memilih diam", points: 3 },
-      { label: "D", text: "Memberi kritikan di media sosial", points: 1 },
-      { label: "E", text: "Membicarakan dengan teman", points: 2 },
+      { label: "C", text: "Memilih diam", points: 1 },
+      { label: "D", text: "Memberi kritikan di media sosial", points: 2 },
+      { label: "E", text: "Membicarakan dengan teman", points: 3 },
     ],
     explanation: [
       {
@@ -2880,6 +2946,7 @@ Siapa yang mendapatkan medali emas?`,
       },
     ],
   },
+
   {
     id: 96,
     category: "TKP",
@@ -2887,20 +2954,24 @@ Siapa yang mendapatkan medali emas?`,
       {
         type: "text",
         value:
-          "Usulan Anda ditolak atasan karena kurang pas dengan kondisi perusahaan. Sikap Anda …",
+          "Ketika memberi usulan kepada atasan, usulan Anda ditolak karena dirasa kurang pas dengan kondisi perusahaan. Sikap Anda ….",
       },
     ],
     options: [
       { label: "A", text: "Menerima penolakan", points: 2 },
       { label: "B", text: "Memperbaiki ide dan mengajukan kembali", points: 4 },
-      { label: "C", text: "Menyederhanakan usulan agar sesuai keadaan", points: 3 },
+      { label: "C", text: "Menyederhanakan usulan agar sesuai keadaan perusahaan", points: 5 },
       { label: "D", text: "Mendebat dan mempertahankan usulan", points: 1 },
-      { label: "E", text: "Menerima dan menjadikannya pelajaran berharga", points: 5 },
+      {
+        label: "E",
+        text: "Memilih menerima dan menjadikan pelajaran berharga dalam memberi usulan di kemudian hari",
+        points: 3,
+      },
     ],
     explanation: [
       {
         type: "text",
-        value: "**Jawaban: E**\n\n",
+        value: "**Jawaban: C**\n\n",
       },
       {
         type: "image",
@@ -2918,16 +2989,16 @@ Siapa yang mendapatkan medali emas?`,
       },
     ],
     options: [
-      { label: "A", text: "Tidak menyebarkannya", points: 5 },
-      { label: "B", text: "Memblokir akun penyebarnya", points: 2 },
-      { label: "C", text: "Tidak akan membaca lebih detail", points: 3 },
-      { label: "D", text: "Melapor kepada pihak media sosial", points: 4 },
+      { label: "A", text: "Tidak menyebarkannya", points: 3 },
+      { label: "B", text: "Memblokir akun penyebarnya", points: 4 },
+      { label: "C", text: "Tidak akan membaca lebih detail", points: 2 },
+      { label: "D", text: "Melapor kepada pihak media sosial", points: 5 },
       { label: "E", text: "Tidak ambil pusing", points: 1 },
     ],
     explanation: [
       {
         type: "text",
-        value: "**Jawaban: A**\n\n",
+        value: "**Jawaban: D**\n\n",
       },
       {
         type: "image",
@@ -2947,9 +3018,13 @@ Siapa yang mendapatkan medali emas?`,
     options: [
       { label: "A", text: "Menelpon ahli IT", points: 2 },
       { label: "B", text: "Mencoba menyalakan, jika gagal minta bantuan teman", points: 4 },
-      { label: "C", text: "Meminta bantuan teman dekat", points: 3 },
-      { label: "D", text: "Memilih tidak ambil pusing", points: 1 },
-      { label: "E", text: "Mencoba menyalakan sendiri, jika gagal segera panggil ahli", points: 5 },
+      { label: "C", text: "Meminta bantuan teman dekat", points: 1 },
+      { label: "D", text: "Memilih tidak ambil pusing", points: 3 },
+      {
+        label: "E",
+        text: "Mencoba menyalakan dan mengutak atiknya jika tidak bisa segera menelpon ahli IT",
+        points: 5,
+      },
     ],
     explanation: [
       {
@@ -2968,15 +3043,20 @@ Siapa yang mendapatkan medali emas?`,
     content: [
       {
         type: "text",
-        value: "Sebagai panitia gathering kantor, menyikapi penentuan tempat wisata, Anda akan …",
+        value:
+          "Anda bertanggung jawab menjadi salah satu panitia family gathering di kantor, terkait tempat yang akan dikunjungi maka sikap Anda ….",
       },
     ],
     options: [
-      { label: "A", text: "Menanyakan tempat bagus menurut teman", points: 3 },
+      { label: "A", text: "Menanyakan kepada teman kantor tempat yang sekiranya bagus", points: 4 },
       { label: "B", text: "Tidak meminta pendapat teman", points: 1 },
-      { label: "C", text: "Mendiskusikan beberapa usulan tempat pilihan Anda", points: 5 },
-      { label: "D", text: "Meminta teman menuruti pilihan Anda", points: 2 },
-      { label: "E", text: "Mengadakan poling di grup WAG", points: 4 },
+      {
+        label: "C",
+        text: "Mendiskusikan dengan teman kantor terkait beberapa usulan tempat yang Anda pilih",
+        points: 5,
+      },
+      { label: "D", text: "Mengatakan bahwa teman harus menuruti apa yang Anda pilih", points: 2 },
+      { label: "E", text: "Mengadakan poling di grup WAG", points: 3 },
     ],
     explanation: [
       {
@@ -2996,20 +3076,28 @@ Siapa yang mendapatkan medali emas?`,
       {
         type: "text",
         value:
-          "Toko kain keluarga krisis karena pandemi dan mau dijual. Sebagai pemegang saham, Anda …",
+          "Ketika toko kain yang sudah puluhan tahun buka, harus mengalami krisis karena pandemic, sehingga ada rencana toko dijual. Sikap Anda selaku salah satu orang yang juga memiliki saham di toko tersebut ….",
       },
     ],
     options: [
-      { label: "A", text: "Mendukung penjualan agar tidak rugi lebih besar", points: 2 },
-      { label: "B", text: "Berusaha mencari cara mempertahankan operasional", points: 5 },
-      { label: "C", text: "Melakukan cuci gudang sebelum ditutup", points: 3 },
-      { label: "D", text: "Memasang iklan agar cepat terjual", points: 1 },
-      { label: "E", text: "Mengajak diskusi pemegang saham mencari solusi bersama", points: 4 },
+      {
+        label: "A",
+        text: "Mendukung daripada nanti mengalami masalah yang lebih serius",
+        points: 2,
+      },
+      { label: "B", text: "Berusaha mencari cara mempertahankan beroperasinya took", points: 4 },
+      { label: "C", text: "Melakukan cuci gudang sebelum toko benar-benar ditutup", points: 3 },
+      { label: "D", text: "Memilih untuk memasang iklan agar bisa dijual cepat", points: 1 },
+      {
+        label: "E",
+        text: "Mengajak diskusi pemegang saham dan bersama-sama mencari solusi",
+        points: 5,
+      },
     ],
     explanation: [
       {
         type: "text",
-        value: "**Jawaban: B**\n\n",
+        value: "**Jawaban: E**\n\n",
       },
       {
         type: "image",
@@ -3028,15 +3116,27 @@ Siapa yang mendapatkan medali emas?`,
     ],
     options: [
       { label: "A", text: "Menolak beasiswa", points: 1 },
-      { label: "B", text: "Menunggu kelahiran dan merelakan beasiswa tahun ini", points: 2 },
-      { label: "C", text: "Tetap berangkat dan pulang saat istri melahirkan", points: 4 },
-      { label: "D", text: "Membujuk istri agar mau ikut", points: 3 },
-      { label: "E", text: "Ambil beasiswa dalam negeri agar bisa mendampingi istri", points: 5 },
+      {
+        label: "B",
+        text: "Menunggu kelahiran anak Anda dan terpaksa merelakan beasiswa di tahun ini",
+        points: 2,
+      },
+      {
+        label: "C",
+        text: "Tetap berangkat dan ketika nanti istri melahirkan sebisa mungkin Anda kembali ke Indonesia",
+        points: 5,
+      },
+      { label: "D", text: "Membujuk istri agar mau ikut", points: 4 },
+      {
+        label: "E",
+        text: "Mengalah dan menolak beasiswa di luar negeri serta mengusulkan mengambil beasiswa dalam negeri saja agar bisa mendampingi istri",
+        points: 3,
+      },
     ],
     explanation: [
       {
         type: "text",
-        value: "**Jawaban: E**\n\n",
+        value: "**Jawaban: C**\n\n",
       },
       {
         type: "image",
@@ -3050,20 +3150,25 @@ Siapa yang mendapatkan medali emas?`,
     content: [
       {
         type: "text",
-        value: "Kantor krisis dan ada potensi PHK massal. Sebagai pimpinan, Anda …",
+        value:
+          "Ketika terjadi permasalahan di kantor yang memungkinkan terjadinya PHK besar-besaran, maka sikap Anda selaku pimpinan ….",
       },
     ],
     options: [
-      { label: "A", text: "Merasa tertekan dan stres", points: 1 },
-      { label: "B", text: "Mendiskusikan dengan dewan direksi", points: 4 },
-      { label: "C", text: "Memutuskan menjual aset perusahaan", points: 2 },
-      { label: "D", text: "Mencari solusi mempertahankan perusahaan dan karyawan", points: 5 },
-      { label: "E", text: "Memberhentikan karyawan kontrak saja", points: 3 },
+      { label: "A", text: "Merasa tertekan dan stress berlarut-larut", points: 1 },
+      { label: "B", text: "Mengajak bertemu dewan direksi dan mendiskusikannya", points: 5 },
+      { label: "C", text: "Memutuskan untuk menjual asset perusahaan", points: 2 },
+      {
+        label: "D",
+        text: "Memilih untuk mencari solusi mempertahankan perusahaan dan karyawannya",
+        points: 4,
+      },
+      { label: "E", text: "Memberhentikan karyawan kontrak", points: 3 },
     ],
     explanation: [
       {
         type: "text",
-        value: "**Jawaban: D**\n\n",
+        value: "**Jawaban: B**\n\n",
       },
       {
         type: "image",
@@ -3077,15 +3182,23 @@ Siapa yang mendapatkan medali emas?`,
     content: [
       {
         type: "text",
-        value: "Diminta menjaga rahasia perusahaan, sikap Anda adalah …",
+        value: "Ketika Anda diminta menjaga rahasia perusahaan maka sikap Anda ….",
       },
     ],
     options: [
-      { label: "A", text: "Tidak akan membocorkannya", points: 4 },
+      { label: "A", text: "Tidak akan membocorkannya", points: 2 },
       { label: "B", text: "Menghindar jika ada yang mencoba mengorek info", points: 3 },
-      { label: "C", text: "Amanah dan tidak cerita ke siapapun termasuk teman dekat", points: 5 },
-      { label: "D", text: "Hanya bercerita dengan orang luar kantor", points: 1 },
-      { label: "E", text: "Tidak menanggapi pancingan teman soal rahasia", points: 2 },
+      {
+        label: "C",
+        text: "Memilih amanah, dan tidak akan menceritakan kepada siapapun sekalipun teman dekat",
+        points: 5,
+      },
+      {
+        label: "D",
+        text: "Jika ingin bercerita maka lebih baik cerita dengan orang luar kantor",
+        points: 1,
+      },
+      { label: "E", text: "Tidak menanggapi pancingan teman soal rahasia", points: 4 },
     ],
     explanation: [
       {
@@ -3104,15 +3217,16 @@ Siapa yang mendapatkan medali emas?`,
     content: [
       {
         type: "text",
-        value: "Mau rapat penting tapi ban motor bocor di jalan. Sikap Anda …",
+        value:
+          "Ketika akan berangkat ke kantor, ban motor Anda bocor. Padahal Anda harus sampai kantor tepat waktu karena ada rapat. Sikap Anda ….",
       },
     ],
     options: [
       { label: "A", text: "Mencari kendaraan online", points: 5 },
-      { label: "B", text: "Menunggu angkutan umum", points: 2 },
-      { label: "C", text: "Meminta diantar orang rumah", points: 3 },
-      { label: "D", text: "Menelpon teman kantor minta jemput", points: 1 },
-      { label: "E", text: "Memilih menambal ban dulu", points: 4 },
+      { label: "B", text: "Menunggu angkutan umum", points: 3 },
+      { label: "C", text: "Meminta diantar orang rumah", points: 4 },
+      { label: "D", text: "Menelpon teman kantor minta jemput", points: 2 },
+      { label: "E", text: "Memilih menambal ban dulu", points: 1 },
     ],
     explanation: [
       {
@@ -3131,20 +3245,33 @@ Siapa yang mendapatkan medali emas?`,
     content: [
       {
         type: "text",
-        value: "Mahasiswa di kampus Anda ditangkap karena terorisme. Sebagai Dekan, Anda …",
+        value:
+          "Ada pemberitaan bahwa beberapa mahasiswa di kampus Anda ditangkap polisi karena dinyatakan terlibat aksi terorisme. Sikap Anda selaku dekan fakultas …",
       },
     ],
     options: [
-      { label: "A", text: "Mencari kebenaran, jika benar maka dikeluarkan", points: 4 },
-      { label: "B", text: "Melarang keras aktivitas kampus yang mengarah terorisme", points: 5 },
-      { label: "C", text: "Klarifikasi bahwa itu hanya oknum", points: 3 },
-      { label: "D", text: "Tidak mau tahu agar nama kampus tidak tercoreng", points: 1 },
-      { label: "E", text: "Langsung mengeluarkan mahasiswa tersebut", points: 2 },
+      { label: "A", text: "Mencari kebenaran, jika benar maka dikeluarkan", points: 5 },
+      { label: "B", text: "Melarang keras aktivitas kampus yang mengarah terorisme", points: 3 },
+      {
+        label: "C",
+        text: "Mencari kebenaran berita dan klarifikasi bahwa itu hanya oknum",
+        points: 2,
+      },
+      {
+        label: "D",
+        text: "Tidak mau tahu, karena pemberitaan itu mencoreng nama baik kampus",
+        points: 4,
+      },
+      {
+        label: "E",
+        text: "Memilih mengeluarkan mahasiswa tersebut dengan mengirim surat kepada orangtuanya",
+        points: 1,
+      },
     ],
     explanation: [
       {
         type: "text",
-        value: "**Jawaban: B**\n\n",
+        value: "**Jawaban: A**\n\n",
       },
       {
         type: "image",
@@ -3158,15 +3285,24 @@ Siapa yang mendapatkan medali emas?`,
     content: [
       {
         type: "text",
-        value: "Polisi mencurigai teroris di lingkungan Anda. Sebagai Ketua RT, Anda akan …",
+        value:
+          "Jika polisi mencurigai bahwa ada kelompok teroris yang berkeliaran di sekitar linkungan tempat tinggal Anda, ketika polisi mencoba mengorek informasi dari Anda selaku ketua RT maka sikap Anda …",
       },
     ],
     options: [
-      { label: "A", text: "Memberi keterangan detail membantu polisi", points: 4 },
-      { label: "B", text: "Memberi keterangan jujur untuk mempermudah penyelidikan", points: 5 },
-      { label: "C", text: "Memberi keterangan seperlunya", points: 3 },
+      {
+        label: "A",
+        text: "Memberi keterangan dengan detail agar bisa membantu kerja polisi",
+        points: 4,
+      },
+      {
+        label: "B",
+        text: "Memberi keterangan secara jujur, benar sehingga mempermudah penyelidikan polisi",
+        points: 5,
+      },
+      { label: "C", text: "Memberi keterangan seperlunya", points: 2 },
       { label: "D", text: "Merasa takut berurusan dengan polisi", points: 1 },
-      { label: "E", text: "Memberi keterangan sebanyak mungkin agar polisi simpati", points: 2 },
+      { label: "E", text: "Memberi keterangan sebanyak mungkin agar polisi simpati", points: 3 },
     ],
     explanation: [
       {
@@ -3190,9 +3326,9 @@ Siapa yang mendapatkan medali emas?`,
     ],
     options: [
       { label: "A", text: "Tidak akan mengikuti", points: 3 },
-      { label: "B", text: "Tidak akan percaya", points: 4 },
+      { label: "B", text: "Tidak akan percaya", points: 2 },
       { label: "C", text: "Mendukung karena kurang pro pemerintah", points: 1 },
-      { label: "D", text: "Memblokir akun pengujar kebencian", points: 2 },
+      { label: "D", text: "Memblokir akun pengujar kebencian", points: 4 },
       { label: "E", text: "Tidak terlibat dan tidak menjadi pengikut akunnya", points: 5 },
     ],
     explanation: [
@@ -3212,20 +3348,25 @@ Siapa yang mendapatkan medali emas?`,
     content: [
       {
         type: "text",
-        value: "Seseorang menistakan agama Anda melalui konten fitnah. Sikap Anda …",
+        value:
+          "Ketika seseorang berusaha menistakan agama yang Anda anut dengan membuat konten-konten yang sifatnya berisi tnah dan menjelek-jelakan agama, maka sikap Anda ….",
       },
     ],
     options: [
       { label: "A", text: "Mencari dukungan untuk mengecam orang tersebut", points: 3 },
-      { label: "B", text: "Melapor kepada polisi karena tindakannya meresahkan", points: 5 },
+      { label: "B", text: "Melapor kepada polisi karena tindakannya meresahkan", points: 4 },
       { label: "C", text: "Melakukan demo besar-besaran", points: 1 },
       { label: "D", text: "Memilih diam karena malas berkomentar", points: 2 },
-      { label: "E", text: "Memberi teguran keras melalui petisi", points: 4 },
+      {
+        label: "E",
+        text: "Memberi teguran keras melalui petisi agar konten jangan diikuti",
+        points: 5,
+      },
     ],
     explanation: [
       {
         type: "text",
-        value: "**Jawaban: B**\n\n",
+        value: "**Jawaban: E**\n\n",
       },
       {
         type: "image",
@@ -3239,15 +3380,20 @@ Siapa yang mendapatkan medali emas?`,
     content: [
       {
         type: "text",
-        value: "Kebijakan pemerintah dirasa tidak pro rakyat. Sikap Anda …",
+        value:
+          "Ketika ada kebijakan pemerintah yang dirasa tidak pro dengan rakyat, maka sikap Anda ….",
       },
     ],
     options: [
       { label: "A", text: "Memilih sabar", points: 4 },
       { label: "B", text: "Mengecam dengan petisi online", points: 1 },
       { label: "C", text: "Meyakini keadaan ini hanya sementara", points: 3 },
-      { label: "D", text: "Percaya kebijakan tersebut pasti demi kebaikan rakyat", points: 5 },
-      { label: "E", text: "Menggunjingkan dengan teman", points: 2 },
+      {
+        label: "D",
+        text: "Berusaha percaya bahwa segala kebijakan pemerintah pasti baik bagi rakyat",
+        points: 5,
+      },
+      { label: "E", text: "Memilih menggunjingkan dengan teman", points: 2 },
     ],
     explanation: [
       {
@@ -3266,14 +3412,14 @@ Siapa yang mendapatkan medali emas?`,
     content: [
       {
         type: "text",
-        value: "Teman menjelek-jelekkan pemerintah di media sosial. Sikap Anda …",
+        value: "Ketika teman Anda menjelek-jelekan pemerintah di media sosial, maka sikap Anda ….",
       },
     ],
     options: [
       { label: "A", text: "Mengingatkan secara pribadi", points: 5 },
-      { label: "B", text: "Mengingatkan di depan umum", points: 2 },
-      { label: "C", text: "Memblokir akunnya", points: 1 },
-      { label: "D", text: "Melaporkan akunnya", points: 3 },
+      { label: "B", text: "Mengingatkan di depan umum", points: 1 },
+      { label: "C", text: "Memblokir akunnya", points: 3 },
+      { label: "D", text: "Melaporkan akunnya", points: 2 },
       { label: "E", text: "Mengajak diskusi agar pikirannya terbuka", points: 4 },
     ],
     explanation: [

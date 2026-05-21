@@ -123,16 +123,28 @@ export default function PembahasanSoalTryout1() {
                   return (
                     <div
                       key={i}
-                      className={`w-full text-left p-4 rounded-2xl border-2 flex items-start gap-4 ${isSelectedByUser ? "border-indigo-600 bg-indigo-50/70 text-indigo-900 shadow-sm" : "border-slate-100 bg-slate-50 text-slate-600"}`}
+                      className={`w-full text-left p-4 rounded-2xl border-2 flex items-start gap-4 transition-all duration-200 ${
+                        isSelectedByUser
+                          ? "border-indigo-600 bg-indigo-50/70 text-indigo-900 shadow-sm"
+                          : "border-slate-100 bg-slate-50 text-slate-600"
+                      }`}
                     >
+                      {/* 1. KOTAK HURUF OPSI: Ditambahkan flex-shrink-0 agar tidak gepeng/berubah bentuk saat teks sangat panjang */}
                       <div
-                        className={`w-8 h-8 rounded-lg flex items-center justify-center font-bold text-sm ${isSelectedByUser ? "bg-indigo-600 text-white" : "bg-white border border-slate-200 text-slate-400"}`}
+                        className={`w-8 h-8 rounded-lg flex items-center justify-center font-bold text-sm flex-shrink-0 mt-0.5 transition-colors ${
+                          isSelectedByUser
+                            ? "bg-indigo-600 text-white"
+                            : "bg-white border border-slate-200 text-slate-400"
+                        }`}
                       >
                         {opt.label}
                       </div>
-                      <div className="space-y-4">
+
+                      {/* 2. KONTEN OPSI: Ditambahkan flex-1 dan min-w-0 untuk mengontrol pembungkusan kalimat panjang secara sempurna */}
+                      <div className="flex-1 min-w-0 flex flex-col gap-2">
                         {opt.text && !opt.image && (
-                          <div className="text-sm md:text-base font-medium">
+                          // Ditambahkan prose prose-slate agar format teks markdown serasi dan rapi
+                          <div className="text-sm md:text-base font-medium prose prose-slate max-w-none leading-relaxed text-slate-700">
                             <ReactMarkdown
                               remarkPlugins={[remarkMath]}
                               rehypePlugins={[rehypeKatex]}
@@ -141,17 +153,24 @@ export default function PembahasanSoalTryout1() {
                             </ReactMarkdown>
                           </div>
                         )}
+
                         {opt.image && (
-                          <img
-                            src={opt.image}
-                            alt={`Opsi ${opt.label}`}
-                            className="md:h-28 h-24 max-w-full object-contain rounded-lg border border-slate-200"
-                          />
+                          <div className="flex justify-start mt-1">
+                            <img
+                              src={opt.image}
+                              alt={`Opsi ${opt.label}`}
+                              className="md:h-28 h-24 max-w-full object-contain rounded-lg border border-slate-200 bg-white"
+                            />
+                          </div>
                         )}
+
+                        {/* 3. TAG JAWABAN USER: Diubah menjadi bentuk badge (pill) kecil agar terlihat lebih profesional dan terpisah dari teks utama */}
                         {isSelectedByUser && (
-                          <span className="text-[10px] font-black  text-indigo-600 tracking-wider">
-                            Jawaban Anda (Poin: {opt.points})
-                          </span>
+                          <div className="mt-1">
+                            <span className="inline-flex items-center bg-indigo-100 text-indigo-700 text-[10px] font-black px-2.5 py-1 rounded-md tracking-wider uppercase border border-indigo-200">
+                              Jawaban Anda (Poin: {opt.points})
+                            </span>
+                          </div>
                         )}
                       </div>
                     </div>
@@ -216,7 +235,7 @@ export default function PembahasanSoalTryout1() {
                 ) : (
                   <button
                     onClick={() => router.push("/tryout-1/hasil-tryout-1")}
-                    className="w-full md:w-auto flex items-center justify-center gap-2 bg-emerald-600 text-white px-8 py-3 rounded-xl font-bold shadow-lg"
+                    className="w-full md:w-auto flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-3 rounded-xl font-bold shadow-lg"
                   >
                     <Home size={18} /> Selesai
                   </button>
