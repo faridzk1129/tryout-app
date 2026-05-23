@@ -83,7 +83,7 @@ export default function Home() {
       setIsLoading(false);
     }
   };
-  
+
   return (
     <main className="min-h-screen w-full bg-slate-50 flex items-center justify-center p-6 relative overflow-x-hidden">
       {/* Floating Notification (Toast) */}
@@ -217,7 +217,12 @@ export default function Home() {
             <div className="pt-4 pb-2 lg:pb-0 relative top-4 border-t border-slate-100 text-center">
               <p className="text-slate-500 text-sm">
                 Belum memiliki akses?{" "}
-                <a href="#" className="text-indigo-600 hover:text-indigo-800 font-bold">
+                <a
+                  href="https://wa.me/6282282233834?text=Halo%20admin%2C%20saya%20ingin%20membeli%20Tryout%20SKD%20nya%2C%20apakah%20tersedia%20%3F"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-indigo-600 hover:text-indigo-800 font-bold"
+                >
                   Hubungi Admin
                 </a>
               </p>

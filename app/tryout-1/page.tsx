@@ -200,7 +200,6 @@ export default function Tryout1() {
 
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              {/* TAMBAHKAN/PERUBAHAN: Tombol Tampil di samping tombol utama jika user sudah pernah kerja */}
 
               {hasResult && (
                 <button
