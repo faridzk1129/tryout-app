@@ -218,7 +218,7 @@ export default function Home() {
               <p className="text-slate-500 text-sm">
                 Belum memiliki akses?{" "}
                 <a href="#" className="text-indigo-600 hover:text-indigo-800 font-bold">
-                  Daftar Member
+                  Hubungi Admin
                 </a>
               </p>
             </div>

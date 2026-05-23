@@ -160,7 +160,7 @@ export default function Beranda() {
                           <Clock size={14} /> 100 Menit
                         </div>
                         <div className="flex items-center gap-2 text-sm text-slate-500">
-                          <CheckCircle2 size={14} /> 110 Soal 
+                          <CheckCircle2 size={14} /> 110 Soal
                         </div>
                       </div>
                     </div>
@@ -174,7 +174,7 @@ export default function Beranda() {
                             : "bg-slate-200 text-slate-400 border-slate-200 cursor-not-allowed"
                         }`}
                       >
-                        {isAvailable ? "Mulai Sekarang" : "Beli Akses"}
+                        {isAvailable ? "Mulai Sekarang" : "Belum Tersedia"}
                         {isAvailable && (
                           <ChevronRight
                             size={18}
