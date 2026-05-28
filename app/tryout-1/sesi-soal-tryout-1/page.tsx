@@ -14,20 +14,20 @@ import {
 } from "lucide-react";
 import { questions, Question } from "@/lib/questions";
 import FocusGuard from "@/components/FocusGuard";
+import { useLoading } from "@/components/LoadingProvider";
 
 import ReactMarkdown from "react-markdown";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 import "katex/dist/katex.min.css";
 
-
 const TOTAL_SOAL = 110;
-const DURATION_SECONDS = 100 * 60; 
+const DURATION_SECONDS = 100 * 60;
 
 export default function SesiSoalTryout1() {
   const router = useRouter();
+  const { setIsLoading } = useLoading();
 
-  // --- STATES ---
   const [currentIdx, setCurrentIdx] = useState(0);
   const [timeLeft, setTimeLeft] = useState<number | null>(null);
   const [answers, setAnswers] = useState<
@@ -36,9 +36,6 @@ export default function SesiSoalTryout1() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  {
-    /* State untuk Modal Confirm & Error Toast */
-  }
   const [showConfirm, setShowConfirm] = useState(false);
   const [error, setError] = useState("");
 
@@ -46,6 +43,7 @@ export default function SesiSoalTryout1() {
   useEffect(() => {
     const session = localStorage.getItem("user_session");
     if (!session) {
+      setIsLoading(true);
       router.push("/");
     }
   }, [router]);
@@ -137,6 +135,8 @@ export default function SesiSoalTryout1() {
       return;
     }
 
+    setIsLoading(true);
+
     setIsSubmitting(true);
     setShowConfirm(false);
 
@@ -180,9 +180,11 @@ export default function SesiSoalTryout1() {
       } else {
         // Ganti alert dengan setError toast
         setError("Gagal menyimpan hasil. Silahkan coba lagi.");
+        setIsLoading(false);
       }
     } catch (err) {
       setError("Koneksi gagal. Periksa jaringan anda.");
+      setIsLoading(false);
     } finally {
       setIsSubmitting(false);
     }

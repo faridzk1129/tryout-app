@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { ChevronLeft, ChevronRight, BookOpenCheck, Menu, X, Home } from "lucide-react";
 
+import { useLoading } from "@/components/LoadingProvider";
 import { questions } from "@/lib/questions";
 import ReactMarkdown from "react-markdown";
 import remarkMath from "remark-math";
@@ -14,6 +15,7 @@ const TOTAL_SOAL = 110;
 
 export default function PembahasanSoalTryout1() {
   const router = useRouter();
+  const { setIsLoading } = useLoading();
   const [currentIdx, setCurrentIdx] = useState(0);
   const [answers, setAnswers] = useState<Record<number, { selected: string; points: number }>>({});
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -22,6 +24,7 @@ export default function PembahasanSoalTryout1() {
   useEffect(() => {
     const session = localStorage.getItem("user_session");
     if (!session) {
+      setIsLoading(true);
       router.push("/");
       return;
     }
@@ -32,6 +35,7 @@ export default function PembahasanSoalTryout1() {
       // Mengambil objek answers berisi jawaban TO terakhir user dari database
       setAnswers(parsed.answers || {});
     } else {
+      setIsLoading(true);
       router.push("/tryout-1");
     }
   }, [router]);
@@ -234,7 +238,10 @@ export default function PembahasanSoalTryout1() {
                   </button>
                 ) : (
                   <button
-                    onClick={() => router.push("/tryout-1/hasil-tryout-1")}
+                    onClick={() => {
+                      setIsLoading(true);
+                      router.push("/tryout-1/hasil-tryout-1");
+                    }}
                     className="w-full md:w-auto flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-3 rounded-xl font-bold shadow-lg"
                   >
                     <Home size={18} /> Selesai
@@ -313,7 +320,10 @@ export default function PembahasanSoalTryout1() {
 
           <div className="p-4 bg-slate-50 mt-auto rounded-lg">
             <button
-              onClick={() => router.push("/tryout-1/hasil-tryout-1")}
+              onClick={() => {
+                setIsLoading(true);
+                router.push("/tryout-1/hasil-tryout-1");
+              }}
               className="w-full bg-white text-emerald-600 border border-emerald-200 py-3 rounded-xl text-sm font-black hover:bg-emerald-600 hover:text-white transition-all text-center block"
             >
               Selesai Review

@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Trophy, BookOpenCheck, ArrowLeft, Award } from "lucide-react";
+import { useLoading } from "@/components/LoadingProvider";
 
 const SubTestBar = ({
   label,
@@ -70,11 +71,13 @@ const SubTestBar = ({
 
 export default function HasilTryout1() {
   const router = useRouter();
+  const { setIsLoading } = useLoading();
   const [results, setResults] = useState<any>(null);
 
   useEffect(() => {
     const session = localStorage.getItem("user_session");
     if (!session) {
+      setIsLoading(true);
       router.push("/");
       return;
     }
@@ -83,6 +86,7 @@ export default function HasilTryout1() {
     if (storedResults) {
       setResults(JSON.parse(storedResults));
     } else {
+      setIsLoading(true);
       router.push("/beranda");
     }
   }, [router]);
@@ -93,9 +97,6 @@ export default function HasilTryout1() {
   const radius = 70;
   const circumference = 2 * Math.PI * radius;
 
-  // =====================================================================
-  // /* PERBAIKAN 1: Mendukung dua format sekaligus (CamelCase & SnakeCase) */
-  // =====================================================================
   const safeTotalScore = Number(results.totalScore ?? results.total_score) || 0;
   const scoreTwk = Number(results.scoreTwk ?? results.score_twk) || 0;
   const scoreTiu = Number(results.scoreTiu ?? results.score_tiu) || 0;
@@ -184,14 +185,20 @@ export default function HasilTryout1() {
 
           <div className="mt-12 flex flex-col sm:flex-row gap-4">
             <button
-              onClick={() => router.push("/beranda")}
+              onClick={() => {
+                setIsLoading(true);
+                router.push("/beranda");
+              }}
               className="flex-1 bg-slate-100 text-slate-600 font-bold py-5 px-8 rounded-2xl hover:bg-slate-200 flex items-center justify-center gap-2 hover:-translate-y-1 transition-all duration-300 "
             >
               <ArrowLeft size={20} /> Kembali ke Beranda
             </button>
 
             <button
-              onClick={() => router.push("/tryout-1/pembahasan-soal-tryout-1")}
+              onClick={() => {
+                setIsLoading(true);
+                router.push("/tryout-1/pembahasan-soal-tryout-1");
+              }}
               className="flex-[2] bg-indigo-600 text-white font-bold py-5 px-8 rounded-2xl hover:bg-indigo-700 shadow-xl shadow-indigo-200 flex items-center justify-center gap-2 hover:-translate-y-1 transition-all duration-300 "
             >
               <BookOpenCheck size={20} /> Lihat Pembahasan Soal

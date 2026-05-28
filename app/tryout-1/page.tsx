@@ -13,6 +13,7 @@ import {
   AlertCircle,
 } from "lucide-react";
 import { supabase } from "@/lib/supabase";
+import { useLoading } from "@/components/LoadingProvider";
 
 const PassingGradeChart = ({
   label,
@@ -73,7 +74,7 @@ const PassingGradeChart = ({
 
 export default function Tryout1() {
   const router = useRouter();
-
+  const { setIsLoading } = useLoading();
   const [isCompleted, setIsCompleted] = useState(false);
   const [hasResult, setHasResult] = useState(false);
 
@@ -103,6 +104,11 @@ export default function Tryout1() {
 
     checkUserResult();
   }, []);
+
+  const handleNavigation = (targetPath: string) => {
+    setIsLoading(true);
+    router.push(targetPath);
+  };
 
   return (
     <main className="min-h-screen bg-slate-50 pb-20">
@@ -200,10 +206,9 @@ export default function Tryout1() {
 
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-
               {hasResult && (
                 <button
-                  onClick={() => router.push("/tryout-1/hasil-tryout-1")}
+                  onClick={() => handleNavigation("/tryout-1/hasil-tryout-1")}
                   className="flex-1 bg-slate-100 text-slate-600 font-bold py-5 px-8 rounded-2xl hover:bg-slate-200 flex items-center justify-center gap-2 hover:-translate-y-1 transition-all duration-300"
                 >
                   <BookOpenCheck size={24} />
@@ -212,7 +217,7 @@ export default function Tryout1() {
               )}
 
               <button
-                onClick={() => router.push("/tryout-1/sesi-soal-tryout-1")}
+                onClick={() => handleNavigation("/tryout-1/sesi-soal-tryout-1")}
                 className="flex-[2] flex items-center justify-center gap-3 bg-gradient-to-r from-indigo-600 to-blue-700 hover:from-indigo-700 hover:to-blue-800 text-white font-black py-5 px-8 rounded-2xl transition-all duration-300 shadow-xl shadow-indigo-200 hover:shadow-2xl hover:shadow-indigo-300 hover:-translate-y-1"
               >
                 Mulai Tryout

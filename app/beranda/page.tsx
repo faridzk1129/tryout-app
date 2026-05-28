@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { useLoading } from "@/components/LoadingProvider"; // 1. IMPORT HOOK LOADING
 import {
   BookOpen,
   Clock,
@@ -15,6 +16,7 @@ import {
 
 export default function Beranda() {
   const router = useRouter();
+  const { setIsLoading } = useLoading();
 
   // {/* TAMBAHKAN: State untuk simpan data user */}
   const [userData, setUserData] = useState<{ username: string; to_access_limit: number } | null>(
@@ -43,6 +45,7 @@ export default function Beranda() {
   ];
 
   const handleLogout = () => {
+    setIsLoading(true); // 3. NYALAKAN LOADING SAAT LOGOUT
     localStorage.removeItem("user_session"); // {/* TAMBAHKAN: Hapus session saat logout */}
     router.push("/");
   };
