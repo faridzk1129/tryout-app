@@ -298,7 +298,7 @@ export default function PembahasanSoalTryout1() {
 
                 // 3. Highlight Soal Aktif (Override semua warna di atas dengan Ring & Warna Indigo)
                 const activeStyles = isCurrent
-                  ? "ring-4 ring-indigo-600 ring-inset text-indigo-900"
+                  ? "ring-4 ring-indigo-500 ring-inset text-indigo-900"
                   : "";
 
                 return (

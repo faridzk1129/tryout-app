@@ -442,7 +442,7 @@ export default function SesiSoalTryout1() {
                   if (ans?.selected) bgColor = "bg-emerald-500 text-white";
                   if (ans?.isRagu) bgColor = "bg-amber-500 text-white";
 
-                  const activeClass = isCurrent ? "ring-4 ring-indigo-600 ring-inset" : "";
+                  const activeClass = isCurrent ? "ring-4 ring-indigo-500 ring-inset" : "";
 
                   const activeTextClass =
                     isCurrent && !ans?.selected && !ans?.isRagu
