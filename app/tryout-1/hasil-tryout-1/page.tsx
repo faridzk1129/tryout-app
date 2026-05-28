@@ -169,9 +169,6 @@ export default function HasilTryout1() {
             </div>
           </div>
 
-          {/* ===================================================================== */}
-          {/* PERBAIKAN 3: Gunakan scoreTwk, scoreTiu, scoreTkp yang aman di bawan ini */}
-          {/* ===================================================================== */}
           <div className="space-y-2">
             <SubTestBar label="TWK (Tes Wawasan Kebangsaan)" score={scoreTwk} pg={65} max={150} />
             <SubTestBar label="TIU (Tes Inteligensi Umum)" score={scoreTiu} pg={80} max={175} />
@@ -186,7 +183,6 @@ export default function HasilTryout1() {
           <div className="mt-12 flex flex-col sm:flex-row gap-4">
             <button
               onClick={() => {
-                setIsLoading(true);
                 router.push("/beranda");
               }}
               className="flex-1 bg-slate-100 text-slate-600 font-bold py-5 px-8 rounded-2xl hover:bg-slate-200 flex items-center justify-center gap-2 hover:-translate-y-1 transition-all duration-300 "
