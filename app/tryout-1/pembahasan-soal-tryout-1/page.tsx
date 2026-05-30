@@ -32,7 +32,6 @@ export default function PembahasanSoalTryout1() {
     const storedResults = localStorage.getItem("last_to_result");
     if (storedResults) {
       const parsed = JSON.parse(storedResults);
-      // Mengambil objek answers berisi jawaban TO terakhir user dari database
       setAnswers(parsed.answers || {});
     } else {
       setIsLoading(true);
